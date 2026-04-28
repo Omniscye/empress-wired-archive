@@ -1,0 +1,333 @@
+:root {
+  --bg-color: #020611;
+  --text-color: #91c5ff;
+  --dim-text: #416791;
+  --alert-color: #bedbff;
+  --glow: 0 0 10px rgba(145, 197, 255, 0.45);
+  --panel-glow: rgba(84, 127, 177, 0.25);
+  --font-main: "Share Tech Mono", "Courier New", Courier, monospace;
+  --font-title: "VT323", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.bg-image {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.42;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 22% 28%, rgba(130, 190, 255, 0.16), transparent 18%),
+    radial-gradient(circle at 76% 36%, rgba(56, 102, 162, 0.18), transparent 20%),
+    radial-gradient(circle at 55% 74%, rgba(132, 193, 255, 0.1), transparent 20%),
+    linear-gradient(180deg, rgba(7, 20, 47, 0.4), rgba(2, 6, 17, 0.1));
+  animation: drift 12s ease-in-out infinite alternate;
+}
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.22) 50%),
+    linear-gradient(90deg, rgba(0, 79, 190, 0.05), rgba(145, 197, 255, 0.02), rgba(80, 144, 255, 0.06));
+  background-size: 100% 3px, 3px 100%;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, 0.82) 100%);
+  z-index: 99;
+  pointer-events: none;
+}
+
+.flicker {
+  animation: crt-flicker 0.15s infinite;
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0.95; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
+}
+
+@keyframes drift {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.04) translate3d(1.2%, -1.2%, 0);
+  }
+}
+
+#boot-screen {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 50;
+  max-width: 92%;
+  white-space: pre-wrap;
+  font-size: 1.2rem;
+  text-shadow: var(--glow);
+}
+
+#main-interface {
+  display: none;
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem;
+  border: 1px solid var(--dim-text);
+  background: rgba(3, 10, 22, 0.72);
+  backdrop-filter: blur(3px);
+  box-shadow: inset 0 0 20px rgba(31, 60, 104, 0.32), 0 0 15px rgba(145, 197, 255, 0.12);
+  position: relative;
+  z-index: 10;
+}
+
+header {
+  border-bottom: 2px solid var(--dim-text);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+h1 {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  text-shadow: var(--glow);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sys-info {
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--dim-text);
+  line-height: 1.45;
+}
+
+.quote-block {
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--text-color);
+  opacity: 0.85;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.quote-meta {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--dim-text);
+}
+
+.quote-cryptic {
+  margin-top: 10px;
+}
+
+.access-box {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid var(--dim-text);
+  background: rgba(145, 197, 255, 0.05);
+}
+
+.access-box p + p {
+  margin-top: 0.45rem;
+}
+
+.access-subtext {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  color: var(--dim-text);
+}
+
+.tab-shell {
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.tab-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+
+.tab-button {
+  border: 1px solid var(--dim-text);
+  background: rgba(145, 197, 255, 0.03);
+  color: var(--dim-text);
+  font: inherit;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+
+.tab-button.is-active {
+  color: var(--bg-color);
+  background: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.tab-status {
+  color: var(--dim-text);
+  font-size: 0.82rem;
+}
+
+#team-tabs.is-hidden {
+  display: none;
+}
+
+.directory {
+  width: 100%;
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.directory th {
+  padding: 0.5rem;
+  border-bottom: 1px dashed var(--dim-text);
+  color: var(--dim-text);
+  text-align: left;
+  font-weight: normal;
+}
+
+.directory td {
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid rgba(65, 103, 145, 0.35);
+}
+
+.directory tr:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  text-shadow: none;
+}
+
+.directory tr:hover td {
+  border-bottom-color: transparent;
+}
+
+.loading-row {
+  padding: 2rem;
+  text-align: center;
+  color: var(--dim-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.glitch-link,
+.audio-toggle {
+  position: relative;
+  font-weight: bold;
+}
+
+.directory tr:hover a.glitch-link {
+  color: var(--bg-color);
+}
+
+.audio-toggle {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.tag {
+  margin-left: 10px;
+  padding: 2px 6px;
+  border: 1px solid currentColor;
+  font-size: 0.8rem;
+}
+
+.tag.new {
+  color: var(--bg-color);
+  background-color: var(--text-color);
+  animation: blink 1s step-end infinite;
+}
+
+.directory tr:hover .tag.new {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.cryptic {
+  margin-bottom: 0.5rem;
+  color: rgba(145, 197, 255, 0.08);
+  user-select: text;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.cryptic::selection {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--dim-text);
+  color: var(--dim-text);
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  #main-interface {
+    padding: 1.25rem;
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .sys-info {
+    display: none;
+  }
+
+  .directory th:nth-child(3),
+  .directory td:nth-child(3) {
+    display: none;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}

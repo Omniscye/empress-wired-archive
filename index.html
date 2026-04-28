@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>navi://omniscye-empress.signal - The Wired</title>
+  <meta
+    name="description"
+    content="Omniscye keeps the archive. Empress keeps the teeth. Enter the wired signal where the releases, loops, and ranked traces still whisper."
+  >
+  <meta property="og:title" content="navi://omniscye-empress.signal - The Wired">
+  <meta
+    property="og:description"
+    content="Omniscye keeps the archive. Empress keeps the teeth. Enter the wired signal where the releases, loops, and ranked traces still whisper."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Omniscye // Empress">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="navi://omniscye-empress.signal - The Wired">
+  <meta
+    name="twitter:description"
+    content="Omniscye keeps the archive. Empress keeps the teeth. Enter the wired signal where the releases, loops, and ranked traces still whisper."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="flicker">
+  <audio id="ambient-bgm" src="./music.mp3" loop preload="auto"></audio>
+  <div class="bg-image"></div>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+
+  <div id="boot-screen" aria-live="polite"></div>
+
+  <main id="main-interface">
+    <header>
+      <div>
+        <h1>Navi // Empress_Dist</h1>
+        <p>Present day, present time. HAHAHAHA.</p>
+      </div>
+      <div class="sys-info" id="sys-info">
+        NODE: REPO.MOD.NET<br>
+        ENC: BLUESHIFT / WIRED_ROUTE<br>
+        USER: OMNISCYE
+      </div>
+    </header>
+
+    <p class="cryptic">Tk0144: the archive keeps growing faster than the terminal can remember.</p>
+    <p class="cryptic">Dc1088: every package leaves a trace in the wired.</p>
+
+    <div class="quote-block">
+      "No matter where you are, everyone is always connected."<br>
+      <span class="quote-meta">-- Close the world, Open the nExt.</span>
+      <p class="cryptic quote-cryptic">signal mirror online // thunderstore and nexus remain linked.</p>
+    </div>
+
+    <div class="access-box">
+      <p>&gt; <a href="https://thunderstore.io/c/repo/p/Omniscye/" class="glitch-link" data-text="ACCESS_OMNISCYE_CHANNEL" target="_blank" rel="noreferrer">ACCESS_OMNISCYE_CHANNEL</a></p>
+      <p>&gt; <a href="https://thunderstore.io/c/repo/p/Empress_AI/" class="glitch-link" data-text="ACCESS_EMPRESS_CHANNEL" target="_blank" rel="noreferrer">ACCESS_EMPRESS_CHANNEL</a></p>
+      <p>&gt; <a href="https://www.nexusmods.com/profile/Omniscye/mods" class="glitch-link" data-text="ACCESS_NEXUS_ARCHIVE" target="_blank" rel="noreferrer">ACCESS_NEXUS_ARCHIVE</a></p>
+      <p>&gt; <button id="audio-toggle" class="audio-toggle glitch-link" data-text="ENABLE_LOOP_AUDIO">ENABLE_LOOP_AUDIO</button></p>
+      <p class="access-subtext" id="access-subtext">Contains your live Thunderstore scan, Nexus profile snapshot, and top downloaded releases.</p>
+      <p class="cryptic">Tk0161: let the startup run. the list will resolve itself.</p>
+    </div>
+
+    <p>AVAILABLE MOD SIGNALS / RANKED RELEASES:</p>
+    <p class="cryptic">downloads are pulled from the current Thunderstore snapshot and ordered by signal strength.</p>
+
+    <div class="tab-shell">
+      <div class="tab-row" id="source-tabs" aria-label="Source tabs">
+        <button type="button" class="tab-button is-active" data-source-tab="thunderstore">THUNDERSTORE</button>
+        <button type="button" class="tab-button" data-source-tab="nexus">NEXUS</button>
+      </div>
+      <div class="tab-row" id="team-tabs" aria-label="Thunderstore team tabs">
+        <button type="button" class="tab-button is-active" data-team-tab="Omniscye">OMNISCYE</button>
+        <button type="button" class="tab-button" data-team-tab="Empress_AI">EMPRESS</button>
+      </div>
+      <p class="tab-status" id="tab-status">THUNDERSTORE // OMNISCYE</p>
+    </div>
+
+    <table class="directory">
+      <thead>
+        <tr>
+          <th>FILENAME</th>
+          <th>DOWNLOADS</th>
+          <th>TIMESTAMP</th>
+          <th>SIGNATURE</th>
+        </tr>
+      </thead>
+      <tbody id="release-table-body">
+        <tr>
+          <td colspan="4" class="loading-row">[ ESTABLISHING CONNECTION TO REPOSITORY... ]</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <span id="footer-left">protocol blue // wired</span>
+      <span id="footer-right">loading signal...</span>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

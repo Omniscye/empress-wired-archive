@@ -3,42 +3,98 @@ import { readFile, writeFile } from "node:fs/promises";
 const community = "repo";
 const teamsWanted = ["Omniscye", "Empress_AI"];
 
+const teamConfig = {
+  Omniscye: {
+    displayName: "Omniscye"
+  },
+  Empress_AI: {
+    displayName: "Empress"
+  }
+};
+
 const getJson = async (url) => {
-  const res = await fetch(url, { headers: { accept: "application/json", "user-agent": "OwO" } });
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+  const res = await fetch(url, {
+    headers: {
+      accept: "application/json",
+      "user-agent": "OwO"
+    }
+  });
+
+  if (!res.ok) {
+    throw new Error(`${res.status} ${res.statusText}: ${url}`);
+  }
+
   return res.json();
 };
 
-const existing = JSON.parse(await readFile("stats.json", "utf8"));
-const packages = await getJson(`https://thunderstore.io/api/experimental/community/${community}/package/`);
+const getAllThunderstorePackages = async (team) => {
+  let url = `https://thunderstore.io/api/cyberstorm/listing/${community}/${team}/`;
+  const packages = [];
 
-const mods = packages
-  .filter((pkg) => teamsWanted.includes(pkg.owner))
-  .map((pkg) => ({
-    id: `${pkg.owner}-${pkg.name}`,
-    team: pkg.owner,
-    displayTeam: pkg.owner === "Empress_AI" ? "Empress" : pkg.owner,
-    name: pkg.name,
-    displayName: (pkg.name || "").replaceAll("_", " "),
-    downloads: Number(pkg.downloads || 0),
-    ratings: Number(pkg.rating_score || pkg.rating || 0),
-    description: pkg.description || "",
-    updated: pkg.date_updated || pkg.latest?.date_created || new Date().toISOString(),
-    url: `https://thunderstore.io/c/${community}/p/${pkg.owner}/${pkg.name}/`,
-    categories: (pkg.categories || []).map((cat) => typeof cat === "string" ? cat : cat.name).filter(Boolean)
-  }))
-  .sort((a, b) => b.downloads - a.downloads);
+  while (url) {
+    const page = await getJson(url);
+    packages.push(...page.results);
+    url = page.next;
+  }
 
-const teams = {};
-for (const team of teamsWanted) {
-  const teamMods = mods.filter((mod) => mod.team === team);
-  teams[team] = {
-    displayName: team === "Empress_AI" ? "Empress" : team,
-    url: `https://thunderstore.io/c/${community}/p/${team}/`,
-    mods: teamMods.length,
-    downloads: teamMods.reduce((sum, mod) => sum + mod.downloads, 0)
+  return packages;
+};
+
+const getPackageMetrics = async (team, name) => {
+  try {
+    return await getJson(`https://thunderstore.io/api/v1/package-metrics/${team}/${name}/`);
+  } catch {
+    return null;
+  }
+};
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const normalizePackage = async (team, item) => {
+  const metrics = await getPackageMetrics(team, item.name);
+
+  return {
+    id: `${team}-${item.name}`,
+    team,
+    displayTeam: teamConfig[team].displayName,
+    name: item.name,
+    displayName: (item.name || "").replaceAll("_", " "),
+    downloads: Number(metrics?.downloads ?? item.download_count ?? 0),
+    ratings: Number(metrics?.rating_score ?? item.rating_count ?? 0),
+    version: metrics?.latest_version ?? item.latest?.version_number ?? "",
+    description: item.description || "",
+    updated: item.last_updated || item.latest?.date_created || new Date().toISOString(),
+    url: `https://thunderstore.io/c/${community}/p/${team}/${item.name}/`,
+    categories: (item.categories || []).map((cat) => (typeof cat === "string" ? cat : cat.name)).filter(Boolean)
   };
+};
+
+const existing = JSON.parse(await readFile("stats.json", "utf8"));
+const mods = [];
+const teams = {};
+
+for (const team of teamsWanted) {
+  const packages = await getAllThunderstorePackages(team);
+  const normalized = [];
+
+  for (const item of packages) {
+    normalized.push(await normalizePackage(team, item));
+    await wait(120);
+  }
+
+  const downloads = normalized.reduce((sum, mod) => sum + mod.downloads, 0);
+
+  teams[team] = {
+    displayName: teamConfig[team].displayName,
+    url: `https://thunderstore.io/c/${community}/p/${team}/`,
+    mods: normalized.length,
+    downloads
+  };
+
+  mods.push(...normalized);
 }
+
+mods.sort((a, b) => b.downloads - a.downloads);
 
 const stats = {
   generatedAt: new Date().toISOString(),

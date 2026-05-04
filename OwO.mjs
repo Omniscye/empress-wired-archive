@@ -50,6 +50,27 @@ const getPackageMetrics = async (team, name) => {
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+const syncAppFallback = async (stats) => {
+  const packed = await readFile("app.js", "utf8");
+  const match = packed.match(/const _0='([^']+)'/);
+
+  if (!match) {
+    throw new Error("Could not find packed app.js payload");
+  }
+
+  let source = Buffer.from(match[1], "base64").toString("utf8");
+  const fallbackSource = `const fallbackStats = ${JSON.stringify(stats, null, 2)};`;
+
+  source = source.replace(/const fallbackStats = \{[\s\S]*?\n\};\n\nconst bootText = /, `${fallbackSource}\n\nconst bootText = `);
+  source = source.replace(
+    /fetch\((?:"\.\/stats\.json"|`\.\/stats\.json\?v=.*?`), \{ cache: "(?:no-store|reload)" \}\)/,
+    'fetch(`./stats.json?v=${encodeURIComponent(fallbackStats.generatedAt)}`, { cache: "reload" })'
+  );
+
+  const encoded = Buffer.from(source, "utf8").toString("base64");
+  await writeFile("app.js", `(()=>{const _0='${encoded}';(0,eval)(atob(_0));})();\n`);
+};
+
 const normalizePackage = async (team, item) => {
   const metrics = await getPackageMetrics(team, item.name);
 
@@ -108,4 +129,5 @@ const stats = {
 };
 
 await writeFile("stats.json", `${JSON.stringify(stats, null, 2)}\n`);
+await syncAppFallback(stats);
 console.log(`OwO ${stats.thunderstore.totalMods} ${stats.thunderstore.totalDownloads}`);

@@ -36,8 +36,7 @@ const TITLE_CARDS = [
     scatter: 0.02,
     lines: [
       { text: 'EMPRESS', size: 116, weight: 700, family: 'system-ui, -apple-system, Segoe UI, sans-serif', tracking: 14 },
-      { text: 'CYBER CITY', size: 54, weight: 300, family: 'system-ui, -apple-system, Segoe UI, sans-serif', tracking: 22, gap: 26 },
-      { text: 'C I N E M A T I C   I N T R O', size: 20, weight: 400, family: 'ui-monospace, SFMono-Regular, Menlo, monospace', tracking: 4, gap: 34 },
+      { text: 'C I N E M A T I C', size: 42, weight: 300, family: 'system-ui, -apple-system, Segoe UI, sans-serif', tracking: 20, gap: 96 },
     ],
   },
 ];
@@ -220,6 +219,17 @@ export class Director {
       if (seq.lastBurst !== undefined) seq.lastBurst = -99;
     }
     if (this.sync.loaded) this.sync.seek(this.time);
+    this.prime();
+  }
+
+  prime() {
+    const index = this.frameIndex;
+    const dt = 1 / 60;
+    for (let i = 0; i < 3; i++) this.step(this.time, dt);
+    this.frameIndex = index;
+    const aspect = this.base.width / Math.max(1, this.base.height);
+    this.camera.update(aspect);
+    this.camera.update(aspect);
   }
 
   play() {
@@ -251,8 +261,8 @@ export class Director {
     ctx.progress = local.progress;
     ctx.seq = seq;
 
-    this.rig.shakeAmount = 0.010 + this.sync.punch(time) * 0.030 + this.music.impact * 0.055;
-    this.rig.fovPunch = this.music.impact * 2.4;
+    this.rig.shakeAmount = 0;
+    this.rig.fovPunch = 0;
     this.rig.evaluate(time, ctx);
     this.rig.apply(this.camera);
 
@@ -288,8 +298,23 @@ export class Director {
       post.textOpacity = 0;
     }
 
-    post.exposure *= 0.97 + this.music.energy * 0.06;
-    env.emissiveScale *= 0.97 + this.music.beatPulse * 0.05;
+    post.exposure *= 0.985 + this.music.energy * 0.03;
+
+    const bass = this.music.bass;
+    const treble = this.music.high;
+    const warm = bass * 0.13;
+    const cool = treble * 0.14;
+    const tint = post.tint;
+    tint[0] *= 1 + warm * 0.85 - cool * 0.30;
+    tint[1] *= 1 + warm * 0.20 + cool * 0.16;
+    tint[2] *= 1 + cool * 0.90 - warm * 0.35;
+
+    env.energy = Math.min(1.6, env.energy + this.music.energy * 0.45);
+    env.rimColor = [
+      env.rimColor[0] * (1 + warm * 0.55 - cool * 0.15),
+      env.rimColor[1] * (1 + warm * 0.10 + cool * 0.10),
+      env.rimColor[2] * (1 + cool * 0.60 - warm * 0.20),
+    ];
 
     const stats = this.frame.stats();
     this.stats.prims = stats.prims;

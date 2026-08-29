@@ -293,7 +293,7 @@ export function emitHorde(cast, prims, time, spec) {
       glow: spec.glow !== undefined ? spec.glow : 0.8,
       hair: rand1(i * 11) > 0.4,
       hairStrands: 5,
-      cloak: rand1(i * 13) > 0.6,
+      cloak: false,
       weapon: rand1(i * 17) > 0.65 ? 'blade' : null,
       weaponColor: spec.weaponColor || [0.9, 0.35, 0.28],
     });
@@ -318,7 +318,7 @@ export function emitCircle(cast, prims, time, spec) {
     const c = cast.take(spec.style || 'chorus', {
       scale: spec.scale || 1,
       glow: spec.glow !== undefined ? spec.glow : 1.0,
-      cloak: i % 3 === 0,
+      cloak: false,
       weapon: i % 2 === 0 ? 'blade' : null,
       weaponColor: spec.weaponColor,
     });

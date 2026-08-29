@@ -134,8 +134,8 @@ export class CinematicUI {
     exportButton.addEventListener('click', () => this.toggleExport());
     right.appendChild(exportButton);
 
-    const exitButton = el('button', 'cine-btn cine-wide', 'CITY');
-    exitButton.title = 'Back to the city';
+    const exitButton = el('button', 'cine-btn cine-wide', 'RESTART');
+    exitButton.title = 'Back to the top';
     exitButton.addEventListener('click', () => this.hooks.onExit());
     right.appendChild(exitButton);
 

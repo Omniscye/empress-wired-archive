@@ -454,43 +454,11 @@ export class Humanoid {
   }
 
   emitCloak(prims, time) {
-    const c = JOINT_INDEX.chest * 3;
-    const p = JOINT_INDEX.pelvis * 3;
-    const wj = this.worldJoints;
-    for (let i = 0; i < 3; i++) {
-      const f = i / 2;
-      const sway = turbulence(time * 1.1 + i * 2.1 + this.seed, 3);
-      TMP_DIR[0] = 0;
-      TMP_DIR[1] = -0.4;
-      TMP_DIR[2] = -0.55 - f * 0.35;
-      quat.rotateVec3(TMP_A, this.rotation, TMP_DIR);
-      const w = (0.19 + f * 0.10) * this.scale;
-      const hh = (0.30 + f * 0.15) * this.scale;
-      quat.fromEuler(TMP_Q, -0.45 - f * 0.35 + sway * 0.18, 0, sway * 0.22);
-      quat.multiply(TMP_ROT, this.rotation, TMP_Q);
-      prims.add('quad', {
-        position: [
-          (wj[c] + wj[p]) * 0.5 + TMP_A[0] * 0.35,
-          (wj[c + 1] + wj[p + 1]) * 0.5 + TMP_A[1] * 0.55,
-          (wj[c + 2] + wj[p + 2]) * 0.5 + TMP_A[2] * 0.35,
-        ],
-        rotation: TMP_ROT,
-        scale: [w, hh, 1],
-        kind: this.kind,
-        albedo: this.albedo,
-        emissive: this.emissive,
-        metallic: 0.02,
-        roughness: 0.8,
-        glow: this.glow * (0.34 - f * 0.09),
-        dissolve: this.dissolve,
-        opacity: this.opacity,
-        pattern: this.rimSharpness * 0.7,
-        seed: this.seed + 41 + i,
-      });
-    }
+    void prims;
+    void time;
   }
 
-  emitWeapon(prims, time) {
+emitWeapon(prims, time) {
     const hand = JOINT_INDEX[this.weaponHand] * 3;
     const elbow = JOINT_INDEX[this.weaponHand === 'rHand' ? 'rElbow' : 'lElbow'] * 3;
     const wj = this.worldJoints;

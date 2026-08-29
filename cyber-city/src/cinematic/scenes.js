@@ -154,7 +154,7 @@ export class DarknessSequence extends Sequence {
       emissiveScale: 0.85 + swell * 0.5,
     });
 
-    post.exposure = 0.85 + swell * 0.45 + music.beatPulse * 0.03;
+    post.exposure = 0.85 + swell * 0.45;
     post.bloom = 0.34 + swell * 0.12;
     post.bloomThreshold = 1.02;
     post.dofStrength = 0.95;
@@ -310,8 +310,8 @@ export class FallingSequence extends Sequence {
     deck.add({ at: T.fallSilence, type: TRANSITION.DARKNESS, duration: 2.6, strength: 0.72, color: [0, 0, 0] });
     deck.add({ at: 31.0, type: TRANSITION.FLASH, duration: 0.9, strength: 0.55, color: [0.62, 0.80, 1.0] });
 
-    rig.impulse(T.falling, { shake: 0.10, fov: 5, decay: 3.4 });
-    rig.impulse(31.0, { shake: 0.09, fov: -6, decay: 4.0, push: 0.6 });
+    rig.impulse(T.falling, { shake: 0.05, fov: 3, decay: 3.8, frequency: 8 });
+    rig.impulse(31.0, { shake: 0.04, fov: -3, decay: 4.4, push: 0.4, frequency: 8 });
   }
 
   update(ctx) {
@@ -434,8 +434,7 @@ export class FallingSequence extends Sequence {
     const hero = cast.take('hero', {
       glow: 1.15 + drive * 0.8 + returning * 0.5,
       hairStrands: 8,
-      cloak: true,
-    });
+          });
     if (hero) {
       hero.setPosition(this.heroPos[0], this.heroPos[1], this.heroPos[2]);
       Behaviour.falling(hero, t, {
@@ -531,16 +530,15 @@ export class MemorySequence extends Sequence {
       color: [0.92, 0.96, 1.0], softness: 0.30, ease: 'inQuad',
     });
 
-    const beats = sync.impactsIn(s + 2, this.end - 2, 0.19);
+    const beats = sync.impactsIn(s + 2, this.end - 2, 0.30);
     let last = -99;
     for (const imp of beats) {
-      if (imp.time - last < 4.5) continue;
+      if (imp.time - last < 8.0) continue;
       last = imp.time;
       this.bursts.push(imp.time);
-      rig.impulse(imp.time, { shake: 0.07 * imp.strength * 4, fov: 3.5, decay: 6.0 });
     }
 
-    rig.impulse(T.drop, { shake: 0.55, fov: 22, decay: 4.2, push: -2.5, frequency: 34 });
+    rig.impulse(T.drop, { shake: 0.30, fov: 12, decay: 4.6, push: -1.6, frequency: 9 });
   }
 
   update(ctx) {
@@ -557,7 +555,7 @@ export class MemorySequence extends Sequence {
       if (age < 0 || age > 2.4) continue;
       explode = Math.max(explode, Ease.outQuart(clamp(age / 0.55, 0, 1)) * (1 - smoothstep(0.6, 2.4, age)) * 0.30);
     }
-    const converge = 0.10 * music.barPulse;
+    const converge = 0;
 
     setEnv(env, {
       skyZenith: [0.010, 0.016, 0.040],
@@ -597,12 +595,12 @@ export class MemorySequence extends Sequence {
       particleScale: 1.1 + drive * 0.5,
     });
 
-    post.exposure = 1.04 + drive * 0.14 + music.beatPulse * 0.05;
+    post.exposure = 1.04 + drive * 0.14;
     post.bloom = 0.36 + drive * 0.12;
     post.bloomThreshold = 1.10;
     post.dofStrength = 0.80;
     post.dofRadius = 0.016;
-    post.chromatic = 0.30 + music.impact * 0.55;
+    post.chromatic = 0.30;
     post.vignette = 0.80;
     post.vignetteSoft = 0.24;
     post.grain = 0.030;
@@ -613,8 +611,8 @@ export class MemorySequence extends Sequence {
     post.motionBlur = 0.46;
     post.motionSamples = ctx.quality.motionSamples;
     post.tint = [1.02, 0.99, 1.02];
-    post.speedLines = music.impact * 0.16;
-    post.radialBlur = music.impact * 0.06;
+    post.speedLines = 0;
+    post.radialBlur = 0;
     post.radialCentre = [0.5, 0.5];
 
     this.field.emit(prims, lights, t, {
@@ -634,21 +632,11 @@ export class MemorySequence extends Sequence {
 
     this.motes.emit(particles, ctx.camera.position, t, 1, (0.9 + drive * 0.8) * open);
 
-    for (const b of this.bursts) {
-      const age = t - b;
-      if (age < 0 || age > 1.6) continue;
-      emitShockwave(prims, lights, {
-        centre: [0, 8, 0], radius: 90, life: 1.6,
-        color: [1.0, 0.90, 0.72], glow: 2.4, lightIntensity: 7,
-        normal: [0, 1, 0], seed: 3,
-      }, age);
-    }
-
     const heroPhase = local * 0.16;
     this.heroPos[0] = Math.sin(heroPhase * 2.1) * 6.0;
     this.heroPos[1] = 6.2 + Math.sin(heroPhase * 1.4) * 2.4;
     this.heroPos[2] = Math.cos(heroPhase * 1.7) * 5.0;
-    const hero = cast.take('hero', { glow: 1.2 + drive * 0.5, cloak: true, hairStrands: 8 });
+    const hero = cast.take('hero', { glow: 1.2 + drive * 0.5, hairStrands: 8 });
     if (hero) {
       hero.setPosition(this.heroPos[0], this.heroPos[1], this.heroPos[2]);
       Behaviour.drifting(hero, t, { yaw: heroPhase * 1.1 });
@@ -723,8 +711,8 @@ export class StationSequence extends Sequence {
     d.keyframe(3.163, [2.4, 1.3, 3.8], [0, 1.6, 0], 34);
 
     deck.add({ at: T.stationIgnite, type: TRANSITION.FLASH, duration: 1.1, strength: 0.95, color: [1.0, 0.90, 0.66] });
-    rig.impulse(T.stationIgnite, { shake: 0.22, fov: 10, decay: 4.6 });
-    rig.impulse(T.station, { shake: 0.10, fov: 4, decay: 4.0 });
+    rig.impulse(T.stationIgnite, { shake: 0.13, fov: 6, decay: 5.0, frequency: 8 });
+    rig.impulse(T.station, { shake: 0.05, fov: 2, decay: 4.4, frequency: 8 });
   }
 
   update(ctx) {
@@ -775,7 +763,7 @@ export class StationSequence extends Sequence {
       beamScale: 0.8 + ignite * 0.9,
     });
 
-    post.exposure = 0.94 + ignite * 0.18 + music.beatPulse * 0.04;
+    post.exposure = 0.94 + ignite * 0.18;
     post.bloom = 0.34 + ignite * 0.16;
     post.bloomThreshold = 1.00;
     post.dofStrength = 0.86;
@@ -796,7 +784,7 @@ export class StationSequence extends Sequence {
       centre: this.centre,
       radius: this.radius,
       build,
-      glow: (1.1 + ignite * 1.4) * (0.94 + music.barPulse * 0.12),
+      glow: 1.1 + ignite * 1.4,
       segments: 16,
       halo: 3,
       rotation: t * 0.012,
@@ -808,7 +796,7 @@ export class StationSequence extends Sequence {
     emitLightShaft(frame.beamStore, {
       origin: [0, 130, 0], direction: [0, -1, 0], length: 132,
       radius: 12 + ignite * 8, color: [1.0, 0.90, 0.68],
-      intensity: (0.5 + ignite * 1.5) * (0.9 + music.beatPulse * 0.25),
+      intensity: 0.5 + ignite * 1.5,
       taper: 0.6, dustScale: 0.035, seed: 91,
     });
 
@@ -840,7 +828,7 @@ export class StationSequence extends Sequence {
     this.heroPos[1] = 0;
     this.heroPos[2] = 0;
     const hero = cast.take('hero', {
-      glow: 1.0 + ignite * 0.9, cloak: true, hairStrands: 9,
+      glow: 1.0 + ignite * 0.9, hairStrands: 9,
       weapon: local > (T.stationIgnite - T.station) ? 'key' : null,
       weaponColor: [1.0, 0.92, 0.72],
     });
@@ -928,21 +916,17 @@ export class MontageSequence extends Sequence {
       cursor += length;
     }
 
-    const found = sync.impactsIn(this.start, this.end, 0.20);
+    const found = sync.impactsIn(this.start, this.end, 0.33);
     let last = -99;
     for (const imp of found) {
-      if (imp.time - last < 1.0) continue;
+      if (imp.time - last < 3.2) continue;
       last = imp.time;
       this.impacts.push(imp);
       rig.impulse(imp.time, {
-        shake: 0.10 + imp.strength * 0.55,
-        fov: 5 + imp.strength * 14,
-        decay: 7.5,
-        frequency: 34,
-      });
-      deck.add({
-        at: imp.time, type: TRANSITION.FLASH, duration: 0.34,
-        strength: 0.20 + imp.strength * 0.9, color: [1.0, 0.94, 0.86],
+        shake: 0.05 + imp.strength * 0.16,
+        fov: 2 + imp.strength * 5,
+        decay: 8.0,
+        frequency: 9,
       });
     }
 
@@ -1101,7 +1085,7 @@ export class MontageSequence extends Sequence {
       sunDir: [-0.35, 0.42, -0.84],
       sunColor: [1.0, 0.58, 0.34],
       sunSize: 0.06,
-      sunIntensity: 0.40 + music.beatPulse * 0.18,
+      sunIntensity: 0.40,
       nebula: 0.62,
       stars: 0.12,
       horizonSharp: 0.55,
@@ -1114,7 +1098,7 @@ export class MontageSequence extends Sequence {
       fillColor: [0.28, 0.44, 0.92],
       fillIntensity: 0.30,
       rimColor: [1.0, 0.80, 0.62],
-      rimIntensity: 1.32 + music.beatPulse * 0.62,
+      rimIntensity: 1.32 + drive * 0.34,
       rimPower: 2.6,
 
       fogColor: [0.016, 0.010, 0.020],
@@ -1128,17 +1112,17 @@ export class MontageSequence extends Sequence {
       scatterDistance: 200,
 
       energy: 0.5 + drive * 0.6,
-      emissiveScale: 1.15 + music.beatPulse * 0.20,
+      emissiveScale: 1.15,
       particleScale: 1.2,
       trailScale: 1.5,
     });
 
-    post.exposure = 1.02 + music.beatPulse * 0.10;
-    post.bloom = 0.40 + music.impact * 0.16;
+    post.exposure = 1.02;
+    post.bloom = 0.40;
     post.bloomThreshold = 1.16;
     post.dofStrength = 0.72;
     post.dofRadius = 0.014;
-    post.chromatic = 0.36 + music.impact * 0.75;
+    post.chromatic = 0.36 + music.impact * 0.18;
     post.vignette = 0.92;
     post.vignetteSoft = 0.22;
     post.grain = 0.036;
@@ -1149,10 +1133,10 @@ export class MontageSequence extends Sequence {
     post.gateWeave = 1.1;
     post.motionBlur = 0.78;
     post.motionSamples = ctx.quality.motionSamples;
-    post.speedLines = 0.10 + music.impact * 0.42;
+    post.speedLines = 0.10 + music.impact * 0.14;
     post.speedLineRate = 3.4;
     post.speedLineColor = [1.0, 0.86, 0.72];
-    post.radialBlur = 0.025 + music.impact * 0.14;
+    post.radialBlur = 0.025 + music.impact * 0.05;
     post.radialCentre = [0.5, 0.48];
     post.tint = [1.05, 0.98, 0.96];
 
@@ -1160,14 +1144,14 @@ export class MontageSequence extends Sequence {
       centre: [0, 0, 0], size: 900, thickness: 6,
       albedo: [0.020, 0.014, 0.020],
       emissive: [0.42, 0.16, 0.20],
-      metallic: 0.55, roughness: 0.30, glow: 0.10 + music.barPulse * 0.10,
+      metallic: 0.55, roughness: 0.30, glow: 0.10,
       seed: 3,
     });
 
     this.motes.emit(particles, ctx.camera.position, t, 1, 0.9 + drive * 0.7);
     emitSpeedStreaks(particles, ctx.camera, {
       count: ctx.quality.speedStreaks, color: [1.0, 0.78, 0.56],
-      intensity: 0.9 + music.impact * 2.0, speed: 2.2, size: 0.45,
+      intensity: 0.9 + music.impact * 0.5, speed: 2.2, size: 0.45,
       innerRadius: 3.0, outerRadius: 20, near: 2.5, far: 46, seed: 7,
     }, t);
 
@@ -1188,15 +1172,6 @@ export class MontageSequence extends Sequence {
           kind: PARTICLE_KIND.SPARK, radius: 0.4,
         });
       }
-      const age = t - imp.time;
-      if (age >= 0 && age < 1.0) {
-        emitShockwave(prims, lights, {
-          centre: [this.clash[0], Math.max(0.4, this.clash[1]), this.clash[2]],
-          radius: 8 + imp.strength * 22, life: 1.0,
-          color: [1.0, 0.88, 0.68], glow: 3.2, lightIntensity: 12,
-          normal: [0, 1, 0], seed: 11,
-        }, age);
-      }
     }
     this.pool.emit(particles, t);
   }
@@ -1210,7 +1185,7 @@ export class MontageSequence extends Sequence {
 
     switch (shot.kind) {
       case 'charge': {
-        const c = cast.take('hero', { weapon: 'key', glow: 1.4, cloak: true, weaponColor: [0.86, 0.94, 1.0] });
+        const c = cast.take('hero', { weapon: 'key', glow: 1.4, weaponColor: [0.86, 0.94, 1.0] });
         if (c) {
           c.setPosition(0, 0, lerp(-2.5, 1.5, p));
           Behaviour.running(c, t, { rate: 11.5, yaw: 0 });
@@ -1269,14 +1244,14 @@ export class MontageSequence extends Sequence {
         break;
       }
       case 'dodge': {
-        const c = cast.take('hero', { weapon: 'key', glow: 1.4, cloak: true });
+        const c = cast.take('hero', { weapon: 'key', glow: 1.4 });
         if (c) {
           c.setPosition(lerp(-1.4, 1.4, p), 0, 0);
           Behaviour.attacking(c, clamp(0.28 + p * 0.4, 0, 1), { yaw: 1.2, lunge: 0.5, origin: [lerp(-1.4, 1.4, p), 0, 0] });
           c.emit(prims, t);
           this.emitBladeTrail(ctx, c, [0.80, 0.92, 1.0]);
         }
-        const e = cast.take('rival', { weapon: 'blade', glow: 1.2, cloak: true, weaponColor: [1.0, 0.42, 0.26] });
+        const e = cast.take('rival', { weapon: 'blade', glow: 1.2, weaponColor: [1.0, 0.42, 0.26] });
         if (e) {
           e.setPosition(0, 0, -2.2);
           Behaviour.attacking(e, clamp(p * 1.2, 0, 1), { yaw: 0, lunge: 1.8, origin: [0, 0, -2.2] });
@@ -1291,10 +1266,10 @@ export class MontageSequence extends Sequence {
         emitHorde(cast, prims, t, {
           centre: [0, 0, -8], count: ctx.quality.crowd,
           spacing: 2.2, rowDepth: 3.0, perRow: 7, yaw: 0,
-          glow: 0.9 + music.beatPulse * 0.5, seed, weaponColor: [1.0, 0.34, 0.24],
+          glow: 0.9, seed, weaponColor: [1.0, 0.34, 0.24],
           advance: 0.0,
         });
-        const c = cast.take('hero', { weapon: 'key', glow: 1.5, cloak: true });
+        const c = cast.take('hero', { weapon: 'key', glow: 1.5 });
         if (c) {
           c.setPosition(0, 0, 2.2);
           Behaviour.attacking(c, clamp(p, 0, 1), { yaw: 0, lunge: 0.8, origin: [0, 0, 2.2] });
@@ -1306,7 +1281,7 @@ export class MontageSequence extends Sequence {
       }
       case 'leap': {
         const h = Ease.outQuad(p) * 4.2 - Ease.inQuad(p) * 1.2;
-        const c = cast.take('hero', { weapon: 'key', glow: 1.5, cloak: true });
+        const c = cast.take('hero', { weapon: 'key', glow: 1.5 });
         if (c) {
           c.setPosition(0, Math.max(0, h), lerp(-1.5, 1.5, p));
           Behaviour.attacking(c, clamp(0.2 + p * 0.65, 0, 1), { yaw: 0, lunge: 0, origin: [0, Math.max(0, h), lerp(-1.5, 1.5, p)] });
@@ -1330,8 +1305,8 @@ export class MontageSequence extends Sequence {
         break;
       }
       case 'standoff': {
-        const a = cast.take('hero', { weapon: 'key', glow: 1.3, cloak: true });
-        const b = cast.take('rival', { weapon: 'blade', glow: 1.3, cloak: true, weaponColor: [1.0, 0.42, 0.26] });
+        const a = cast.take('hero', { weapon: 'key', glow: 1.3 });
+        const b = cast.take('rival', { weapon: 'blade', glow: 1.3, weaponColor: [1.0, 0.42, 0.26] });
         if (a) {
           a.setPosition(-1.6, 0, 0);
           Behaviour.standing(a, t, { yaw: Math.PI * 0.5 });
@@ -1348,14 +1323,14 @@ export class MontageSequence extends Sequence {
         break;
       }
       case 'strikeDown': {
-        const a = cast.take('rival', { weapon: 'blade', glow: 1.3, cloak: true, weaponColor: [1.0, 0.42, 0.26] });
+        const a = cast.take('rival', { weapon: 'blade', glow: 1.3, weaponColor: [1.0, 0.42, 0.26] });
         if (a) {
           a.setPosition(0.9, 0, -1.4);
           Behaviour.attacking(a, clamp(p * 1.1, 0, 1), { yaw: Math.PI, lunge: 1.0, origin: [0.9, 0, -1.4] });
           a.emit(prims, t);
           this.emitBladeTrail(ctx, a, [1.0, 0.46, 0.28], 2.2);
         }
-        const b = cast.take('hero', { glow: 1.4, cloak: true });
+        const b = cast.take('hero', { glow: 1.4 });
         if (b) {
           b.setPosition(-0.6, 0, 0.6);
           Behaviour.struck(b, clamp(p * 1.2, 0, 1), { yaw: 0, knockback: 1.4, origin: [-0.6, 0, 0.6] });
@@ -1366,7 +1341,7 @@ export class MontageSequence extends Sequence {
         break;
       }
       case 'rise': {
-        const c = cast.take('hero', { weapon: 'key', glow: 1.2 + p * 0.8, cloak: true });
+        const c = cast.take('hero', { weapon: 'key', glow: 1.2 + p * 0.8 });
         if (c) {
           c.setPosition(0, 0, 0);
           const q = clamp(p, 0, 1);
@@ -1380,8 +1355,8 @@ export class MontageSequence extends Sequence {
         break;
       }
       case 'backToBack': {
-        const a = cast.take('hero', { weapon: 'key', glow: 1.3, cloak: true });
-        const b = cast.take('light', { weapon: 'blade', glow: 1.3, cloak: true, weaponColor: [1.0, 0.86, 0.56] });
+        const a = cast.take('hero', { weapon: 'key', glow: 1.3 });
+        const b = cast.take('light', { weapon: 'blade', glow: 1.3, weaponColor: [1.0, 0.86, 0.56] });
         if (a) {
           a.setPosition(-0.5, 0, 0);
           Behaviour.standing(a, t, { yaw: Math.PI * 0.5 });
@@ -1426,9 +1401,9 @@ export class MontageSequence extends Sequence {
         emitHorde(cast, prims, t, {
           centre: [0, 0, -12], count: ctx.quality.crowd,
           spacing: 3.0, rowDepth: 3.4, perRow: 8, yaw: 0,
-          glow: 0.8 + music.beatPulse * 0.4, seed,
+          glow: 0.8, seed,
         });
-        const c = cast.take('hero', { weapon: 'key', glow: 1.4, cloak: true });
+        const c = cast.take('hero', { weapon: 'key', glow: 1.4 });
         if (c) {
           c.setPosition(0, 0, 2.0);
           Behaviour.standing(c, t, { yaw: 0 });
@@ -1506,7 +1481,7 @@ export class ShatterSequence extends Sequence {
       duration: 2.4, spread: 1.35, spin: 4.4, approach: 0.78,
       edge: 0.45, refraction: 0.05, color: [0.86, 0.94, 1.0], ease: 'outQuad',
     });
-    rig.impulse(T.shatter, { shake: 0.85, fov: 26, decay: 3.6, push: 4.0, frequency: 40 });
+    rig.impulse(T.shatter, { shake: 0.42, fov: 14, decay: 4.0, push: 2.4, frequency: 10 });
     deck.add({ at: T.shatter, type: TRANSITION.FLASH, duration: 0.7, strength: 1.3, color: [0.90, 0.96, 1.0] });
   }
 
@@ -1744,7 +1719,7 @@ export class LightDarkSequence extends Sequence {
         const c = cast.take(style, {
           glow: side === 0 ? 0.9 + swell * 0.7 : 0.55 + swell * 0.4,
           scale: lerp(0.9, 1.15, rand1(i * 41 + side * 7)),
-          cloak: rand1(i * 13 + side) > 0.45,
+          cloak: false,
           weapon: rand1(i * 17 + side * 3) > 0.55 ? 'blade' : null,
           weaponColor: side === 0 ? [1.0, 0.90, 0.62] : [0.52, 0.30, 0.92],
           hairStrands: 6,
@@ -1759,7 +1734,7 @@ export class LightDarkSequence extends Sequence {
       }
     }
 
-    const hero = cast.take('hero', { glow: 1.3 + swell * 0.6, cloak: true, hairStrands: 9 });
+    const hero = cast.take('hero', { glow: 1.3 + swell * 0.6, hairStrands: 9 });
     if (hero) {
       hero.setPosition(0, 0, -1);
       Behaviour.reaching(hero, t, { yaw: 0, amount: 0.28 + swell * 0.35, lookUp: 0.34 });
@@ -1849,12 +1824,12 @@ export class SurrealSequence extends Sequence {
 
     deck.add({ at: T.surrealLift, type: TRANSITION.FLASH, duration: 0.9, strength: 0.65, color: [0.86, 0.94, 1.0] });
 
-    const found = sync.impactsIn(s + 2, this.end - 1, 0.22);
+    const found = sync.impactsIn(s + 2, this.end - 1, 0.34);
     let last = -99;
     for (const imp of found) {
-      if (imp.time - last < 3.2) continue;
+      if (imp.time - last < 9.0) continue;
       last = imp.time;
-      rig.impulse(imp.time, { shake: 0.10 + imp.strength * 0.24, fov: 4, decay: 6.5 });
+      rig.impulse(imp.time, { shake: 0.05 + imp.strength * 0.10, fov: 2, decay: 7.0, frequency: 8 });
     }
   }
 
@@ -1905,7 +1880,7 @@ export class SurrealSequence extends Sequence {
       particleScale: 1.0,
     });
 
-    post.exposure = 1.10 + lift * 0.16 + music.beatPulse * 0.04;
+    post.exposure = 1.10 + lift * 0.16;
     post.bloom = 0.34 + lift * 0.12;
     post.bloomThreshold = 1.18;
     post.dofStrength = 0.70;
@@ -1943,14 +1918,14 @@ export class SurrealSequence extends Sequence {
       centre: [0, 50, -320], radius: 16, shells: 3,
       color: [0.92, 0.96, 1.0],
       glow: 1.6 + lift * 1.6, lightIntensity: 14 + lift * 18, lightRadius: 26,
-      rate: 0.7, punch: music.beatPulse * 0.6, seed: 55,
+      rate: 0.7, punch: 0, seed: 55,
     }, t);
 
     const walkway = this.city.islandAt(3, t, TMP);
     this.heroPos[0] = walkway[0];
     this.heroPos[1] = walkway[1] + 2.6;
     this.heroPos[2] = walkway[2];
-    const hero = cast.take('hero', { glow: 1.2 + lift * 0.6, cloak: true, hairStrands: 9 });
+    const hero = cast.take('hero', { glow: 1.2 + lift * 0.6, hairStrands: 9 });
     if (hero) {
       hero.setPosition(this.heroPos[0], this.heroPos[1], this.heroPos[2]);
       Behaviour.standing(hero, t, { yaw: Math.atan2(-this.heroPos[0], -this.heroPos[2]) });
@@ -2033,18 +2008,14 @@ export class ClimaxSequence extends Sequence {
     deck.add({ at: T.climaxHit - 0.02, type: TRANSITION.FADE, duration: 0.16, color: [0.01, 0.012, 0.03], out: true });
     deck.add({ at: T.climaxHit, type: TRANSITION.FLASH, duration: 2.2, strength: 2.6, color: [1.0, 0.98, 0.94] });
 
-    rig.impulse(T.climaxHit, { shake: 1.5, fov: 34, decay: 2.6, push: -9, frequency: 44 });
+    rig.impulse(T.climaxHit, { shake: 0.70, fov: 18, decay: 3.0, push: -5, frequency: 10 });
 
-    const found = sync.impactsIn(T.climaxHit + 1.0, this.end, 0.20);
+    const found = sync.impactsIn(T.climaxHit + 1.0, this.end, 0.34);
     let last = -99;
     for (const imp of found) {
-      if (imp.time - last < 1.4) continue;
+      if (imp.time - last < 4.0) continue;
       last = imp.time;
-      rig.impulse(imp.time, { shake: 0.14 + imp.strength * 0.4, fov: 6, decay: 7 });
-      deck.add({
-        at: imp.time, type: TRANSITION.FLASH, duration: 0.28,
-        strength: 0.16 + imp.strength * 0.55, color: [1.0, 0.94, 0.84],
-      });
+      rig.impulse(imp.time, { shake: 0.06 + imp.strength * 0.14, fov: 3, decay: 7.5, frequency: 9 });
     }
   }
 
@@ -2082,7 +2053,7 @@ export class ClimaxSequence extends Sequence {
       fillColor: [0.28, 0.34, 0.90],
       fillIntensity: before ? 0.06 : 0.34,
       rimColor: [1.0, 0.92, 0.80],
-      rimIntensity: before ? 0.70 : 1.85 + music.beatPulse * 0.78,
+      rimIntensity: before ? 0.70 : 1.85 + blast * 0.42,
       rimPower: 2.3,
 
       fogColor: [0.012, 0.016, 0.038],
@@ -2102,12 +2073,12 @@ export class ClimaxSequence extends Sequence {
       trailScale: 1.6,
     });
 
-    post.exposure = before ? 0.72 : 1.24 + blast * 0.20 + music.beatPulse * 0.08;
+    post.exposure = before ? 0.72 : 1.24 + blast * 0.20;
     post.bloom = before ? 0.24 : 0.50 - settle * 0.10;
     post.bloomThreshold = before ? 1.30 : 1.08;
     post.dofStrength = before ? 0.95 : 0.68;
     post.dofRadius = 0.016;
-    post.chromatic = before ? 0.18 : 0.44 + music.impact * 0.8;
+    post.chromatic = before ? 0.18 : 0.44 + music.impact * 0.20;
     post.vignette = before ? 1.25 : 0.86;
     post.vignetteSoft = 0.20;
     post.grain = 0.034;
@@ -2117,20 +2088,20 @@ export class ClimaxSequence extends Sequence {
     post.letterbox = 0.18;
     post.motionBlur = before ? 0.08 : 0.70;
     post.motionSamples = ctx.quality.motionSamples;
-    post.speedLines = before ? 0 : (0.16 * (1 - settle) + music.impact * 0.28);
+    post.speedLines = before ? 0 : (0.16 * (1 - settle) + music.impact * 0.10);
     post.speedLineRate = 3.0;
     post.speedLineColor = [1.0, 0.92, 0.80];
-    post.radialBlur = before ? 0 : (0.12 * (1 - settle) + music.impact * 0.10);
+    post.radialBlur = before ? 0 : (0.12 * (1 - settle) + music.impact * 0.04);
     post.radialCentre = [0.5, 0.5];
     post.tint = [1.04, 1.0, 0.98];
 
     emitEnergyCore(prims, lights, {
       centre: [0, 26, 0], radius: before ? 0.9 : 2.2 + blast * 4.5, shells: before ? 1 : 3,
       color: [1.0, 0.96, 0.86],
-      glow: before ? 0.9 : 1.7 + music.beatPulse * 0.8,
+      glow: before ? 0.9 : 1.7 + blast * 0.45,
       lightIntensity: before ? 2.0 : 22 + blast * 30,
       lightRadius: before ? 8 : 22,
-      rate: 1.4, punch: music.beatPulse, seed: 77,
+      rate: 1.4, punch: 0, seed: 77,
     }, t);
 
     if (!before) {
@@ -2142,15 +2113,10 @@ export class ClimaxSequence extends Sequence {
       this.motes.emit(particles, ctx.camera.position, t, 1, 1.2 + drive * 0.8);
 
       emitShockwave(prims, lights, {
-        centre: [0, 26, 0], radius: 190, life: 2.6,
-        color: [1.0, 0.94, 0.82], glow: 4.0, lightIntensity: 26,
+        centre: [0, 26, 0], radius: 165, life: 0.95,
+        color: [1.0, 0.94, 0.82], glow: 3.2, lightIntensity: 20,
         normal: [0, 1, 0], seed: 3,
       }, age);
-      emitShockwave(prims, lights, {
-        centre: [0, 26, 0], radius: 120, life: 1.6,
-        color: [0.72, 0.88, 1.0], glow: 3.4, lightIntensity: 18,
-        normal: [0, 1, 0], seed: 5,
-      }, age - 0.22);
 
       emitCathedralLight(frame.beamStore, lights, {
         centre: [0, 0, 0], count: ctx.quality.beamCount,
@@ -2166,7 +2132,7 @@ export class ClimaxSequence extends Sequence {
         centre: [0, 1.2, 0], radius: 70 * (0.5 + blast * 0.5),
         layers: 4, spacing: 3.5, spin: 0.10,
         color: [1.0, 0.84, 0.46], emissive: [0.42, 0.74, 1.0],
-        glow: 1.4 + music.barPulse * 0.5, seed: 9,
+        glow: 1.4, seed: 9,
       }, t);
     }
 
@@ -2175,12 +2141,12 @@ export class ClimaxSequence extends Sequence {
       albedo: [0.014, 0.016, 0.028],
       emissive: [0.30, 0.30, 0.62],
       metallic: 0.92, roughness: 0.05,
-      glow: (before ? 0.15 : 0.55) + music.barPulse * 0.2,
+      glow: before ? 0.15 : 0.55,
       seed: 21,
     });
 
     if (before) {
-      const hero = cast.take('hero', { glow: 0.8, cloak: true, hairStrands: 9, weapon: 'key' });
+      const hero = cast.take('hero', { glow: 0.8, hairStrands: 9, weapon: 'key' });
       if (hero) {
         hero.setPosition(0, 25.2, 0);
         Behaviour.standing(hero, t, { yaw: 0.1, life: 0.3 });
@@ -2188,7 +2154,7 @@ export class ClimaxSequence extends Sequence {
       }
     } else {
       const hero = cast.take('hero', {
-        glow: 1.6 + music.beatPulse * 0.6, cloak: true, hairStrands: 10,
+        glow: 1.7, hairStrands: 10,
         weapon: 'key', weaponColor: [1.0, 0.96, 0.84], weaponLength: 1.35,
       });
       if (hero) {
@@ -2361,7 +2327,7 @@ export class OutroSequence extends Sequence {
     this.heroPos[2] = 0;
     const hero = cast.take('hero', {
       glow: 1.2 + dissolve * 1.2,
-      cloak: true, hairStrands: 9,
+      hairStrands: 9,
       dissolve: dissolve * 0.92,
     });
     if (hero) {

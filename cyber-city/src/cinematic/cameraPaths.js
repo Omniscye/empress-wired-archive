@@ -192,7 +192,7 @@ export class CameraRig {
     this.cutTime = -99;
     this.impulses = [];
     this.shakeAmount = 0;
-    this.shakeFrequency = 22;
+    this.shakeFrequency = 7.5;
     this.handheldScale = 1;
     this.fovPunch = 0;
     this.focusDistance = 30;
@@ -238,7 +238,7 @@ export class CameraRig {
       fov: spec.fov || 0,
       roll: spec.roll || 0,
       push: spec.push || 0,
-      frequency: spec.frequency || 26,
+      frequency: spec.frequency || 8.5,
     });
     this.impulses.sort((a, b) => a.time - b.time);
     return this;
@@ -330,7 +330,7 @@ export class CameraRig {
       fovPunch += imp.fov * decay;
       rollPunch += imp.roll * decay;
       push += imp.push * decay;
-      frequency = Math.max(frequency, imp.frequency);
+      frequency = Math.max(frequency, Math.min(imp.frequency, 12));
     }
 
     if (shake > 0.0001) {

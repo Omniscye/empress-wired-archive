@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>EMPRESS: CYBER CITY</title>
+<meta name="description" content="An infinite procedural neon city rendered in real time in the browser with WebGL2, and a four minute procedural cinematic cut to its soundtrack.">
+<meta name="theme-color" content="#05060d">
+<meta property="og:title" content="EMPRESS: CYBER CITY">
+<meta property="og:description" content="An infinite procedural neon city rendered in real time in the browser with WebGL2, and a four minute procedural cinematic cut to its soundtrack.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23070812'/%3E%3Crect x='5' y='12' width='5' height='16' fill='%23ff2d78'/%3E%3Crect x='13' y='5' width='6' height='23' fill='%2321e6ff'/%3E%3Crect x='22' y='16' width='5' height='12' fill='%23ffb020'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="scene"></canvas>
+
+<div id="cinematic-ui"></div>
+
+<div id="ui">
+  <header id="hud">
+    <div class="brand">
+      <span class="brand-mark">EMPRESS</span>
+      <span class="brand-sub">CYBER CITY</span>
+    </div>
+    <div class="mode-block">
+      <span id="mode-label">Cinematic</span>
+      <span id="hint-label"></span>
+    </div>
+  </header>
+
+  <div id="stats"></div>
+
+  <button id="panel-toggle" aria-label="Toggle settings">
+    <span></span><span></span><span></span>
+  </button>
+
+  <aside id="panel">
+    <div class="panel-head">
+      <h2>Configuration</h2>
+      <button id="panel-close" aria-label="Close settings">&times;</button>
+    </div>
+    <div id="preset-row"></div>
+    <div id="panel-body"></div>
+  </aside>
+
+  <div id="toast"></div>
+</div>
+
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-title">
+      <span class="loader-mark">EMPRESS</span>
+      <span class="loader-sub">CYBER CITY</span>
+    </div>
+    <div id="loader-progress">
+      <div id="loader-bar"></div>
+    </div>
+    <div id="loader-status">Booting</div>
+    <div class="loader-buttons">
+      <button id="start-button">ENTER THE CITY</button>
+      <button id="intro-button">CINEMATIC INTRO</button>
+    </div>
+    <div class="loader-note">WebGL2 required &middot; runs entirely in your browser</div>
+    <div class="loader-note loader-sub-note">The cinematic is a four minute procedural film cut to its soundtrack. It loads an extra audio track and compiles a second shader set.</div>
+  </div>
+</div>
+
+<div id="error">
+  <div class="error-inner">
+    <h2>Unable to start</h2>
+    <pre></pre>
+    <p>This project needs a browser with WebGL2 and hardware acceleration enabled.</p>
+  </div>
+</div>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
+

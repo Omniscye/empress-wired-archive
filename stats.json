@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-10T21:29:51.576Z",
+  "generatedAt": "2026-10-11T05:29:09.344Z",
   "thunderstore": {
-    "totalDownloads": 3841015,
+    "totalDownloads": 3843362,
     "totalMods": 140,
     "teams": {
       "Omniscye": {
         "displayName": "Omniscye",
         "url": "https://thunderstore.io/c/repo/p/Omniscye/",
         "mods": 136,
-        "downloads": 3808790
+        "downloads": 3811109
       },
       "Empress_AI": {
         "displayName": "Empress",
         "url": "https://thunderstore.io/c/repo/p/Empress_AI/",
         "mods": 4,
-        "downloads": 32225
+        "downloads": 32253
       }
     }
   },
@@ -35,18 +35,18 @@
       "displayTeam": "Omniscye",
       "name": "WalkieTalkies",
       "displayName": "WalkieTalkies",
-      "downloads": 346954,
+      "downloads": 347094,
       "ratings": 16,
       "version": "1.5.5",
       "description": "Push-to-talk walkie talkies with spatialized radio audio, battery, color choices and host-sync settings.",
       "updated": "2026-09-09T01:49:12.579347Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/WalkieTalkies/",
       "categories": [
+        "Server-side",
+        "Items",
         "Mods",
         "Audio",
-        "Items",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -55,16 +55,16 @@
       "displayTeam": "Omniscye",
       "name": "Empress_SharedUpgrades",
       "displayName": "Empress SharedUpgrades",
-      "downloads": 278016,
+      "downloads": 278117,
       "ratings": 7,
       "version": "2.5.0",
       "description": "Host-only upgrade sync for R.E.P.O. One pickup powers up the whole crew in real time, with modded upgrade support and late-join catch-up on level switch.",
       "updated": "2026-05-08T22:28:48.245247Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_SharedUpgrades/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Upgrades",
-        "Server-side"
+        "Upgrades"
       ]
     },
     {
@@ -73,16 +73,16 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Spawn_Browser",
       "displayName": "Empress Spawn Browser",
-      "downloads": 222384,
+      "downloads": 222571,
       "ratings": 9,
       "version": "4.5.4",
       "description": "The Ultimate control suite for REPO with powerful spawn tools, tax tokens, cosmetic boxes, world control, freecam, and live scene editing.",
       "updated": "2026-09-09T01:49:41.505400Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Spawn_Browser/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Tools",
-        "Server-side"
+        "Tools"
       ]
     },
     {
@@ -91,17 +91,17 @@
       "displayTeam": "Omniscye",
       "name": "Empress_ShopLoaderAPI",
       "displayName": "Empress ShopLoaderAPI",
-      "downloads": 160677,
+      "downloads": 160815,
       "ratings": 4,
       "version": "2.1.0",
       "description": "A developer focused API for R.E.P.O. that simplifies custom shop loading with automatic networking, RNG selection, and BepInEx config integration.",
       "updated": "2026-07-10T22:37:38.846076Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_ShopLoaderAPI/",
       "categories": [
+        "Server-side",
         "Tools",
         "Libraries",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -110,16 +110,16 @@
       "displayTeam": "Omniscye",
       "name": "Valuables_Uncapped",
       "displayName": "Valuables Uncapped",
-      "downloads": 133010,
+      "downloads": 133035,
       "ratings": 2,
       "version": "2.1.0",
       "description": "Bypasses the level value-budget so high-value loot no longer reduces how many valuables spawn. Optional increases Valuables on maps. Host-only by default.",
       "updated": "2026-05-16T03:04:57.567187Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Valuables_Uncapped/",
       "categories": [
+        "Server-side",
         "Mods",
         "Valuables",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -129,17 +129,17 @@
       "displayTeam": "Omniscye",
       "name": "Pennywise_Enemy",
       "displayName": "Pennywise Enemy",
-      "downloads": 115427,
+      "downloads": 115480,
       "ratings": 3,
       "version": "1.1.1",
       "description": "Adds Pennywise the Dancing Clown as a terrifying new enemy. A red balloon will stalk you... and popping it SAVES you from his arrival.",
       "updated": "2026-02-23T22:22:22.305412Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Pennywise_Enemy/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -149,17 +149,17 @@
       "displayTeam": "Omniscye",
       "name": "Weeping_Angel_Renewed",
       "displayName": "Weeping Angel Renewed",
-      "downloads": 105542,
+      "downloads": 105634,
       "ratings": 8,
       "version": "2.0.2",
       "description": "A renewed Weeping Angel enemy for REPO that freezes when watched, hunts when unseen, and brings creepy statue chaos back to your runs.",
       "updated": "2026-05-31T02:21:32.405491Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Weeping_Angel_Renewed/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -168,7 +168,7 @@
       "displayTeam": "Omniscye",
       "name": "Enemy_Health_Bars",
       "displayName": "Enemy Health Bars",
-      "downloads": 88687,
+      "downloads": 88701,
       "ratings": 3,
       "version": "1.0.6",
       "description": "Health bars above every enemy. Host not required.",
@@ -185,7 +185,7 @@
       "displayTeam": "Omniscye",
       "name": "Snow_Menu",
       "displayName": "Snow Menu",
-      "downloads": 83159,
+      "downloads": 83161,
       "ratings": 4,
       "version": "1.1.2",
       "description": "White, beautiful snowfall on the Main Menu and Lobby.",
@@ -193,8 +193,8 @@
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Snow_Menu/",
       "categories": [
         "Mods",
-        "Client-side",
-        "Cosmetics"
+        "Cosmetics",
+        "Client-side"
       ]
     },
     {
@@ -203,16 +203,16 @@
       "displayTeam": "Omniscye",
       "name": "Truck_Door_Button",
       "displayName": "Truck Door Button",
-      "downloads": 76917,
+      "downloads": 76928,
       "ratings": 2,
       "version": "1.2.2",
       "description": "Open and Close the Truck door! Networked truck door button with synced open/close events for all clients, local FX, and anti-spam cooldown.",
       "updated": "2026-02-23T22:29:26.975888Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Truck_Door_Button/",
       "categories": [
+        "Server-side",
         "Mods",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -222,19 +222,19 @@
       "displayTeam": "Omniscye",
       "name": "Christmas_Gifts",
       "displayName": "Christmas Gifts",
-      "downloads": 76446,
+      "downloads": 76459,
       "ratings": 4,
       "version": "2.0.1",
       "description": "Press **E** to open festive presents scattered around the level. Sometimes it’s a gift… sometimes it’s a *boom*. All outcomes are host-synced so everyone sees the same surprise.",
       "updated": "2026-05-31T01:58:12.999448Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Christmas_Gifts/",
       "categories": [
-        "Mods",
-        "Valuables",
         "Items",
         "Upgrades",
         "Weapons",
         "Server-side",
+        "Mods",
+        "Valuables",
         "AI Generated"
       ]
     },
@@ -244,20 +244,20 @@
       "displayTeam": "Omniscye",
       "name": "Trick_or_Treat",
       "displayName": "Trick or Treat",
-      "downloads": 73752,
+      "downloads": 73793,
       "ratings": 2,
       "version": "1.3.7",
       "description": "Adds pumpkins randomly to all levels. Open them to get a Trick or a Treat! Have a Happy Halloween!",
       "updated": "2025-11-02T04:47:54.352235Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Trick_or_Treat/",
       "categories": [
-        "Mods",
-        "Valuables",
+        "Server-side",
         "Items",
+        "Mods",
         "Upgrades",
-        "Weapons",
+        "Valuables",
         "Monsters",
-        "Server-side"
+        "Weapons"
       ]
     },
     {
@@ -266,7 +266,7 @@
       "displayTeam": "Omniscye",
       "name": "Empress_ThirdPerson",
       "displayName": "Empress ThirdPerson",
-      "downloads": 67200,
+      "downloads": 67241,
       "ratings": 3,
       "version": "1.2.1",
       "description": "A simple, toggleable third-person camera mod with zoom and configurable offsets.",
@@ -283,7 +283,7 @@
       "displayTeam": "Omniscye",
       "name": "Join_Notifier",
       "displayName": "Join Notifier",
-      "downloads": 64981,
+      "downloads": 65010,
       "ratings": 4,
       "version": "1.1.1",
       "description": "Plays a sound when someone joins your lobby. Host-only needs.",
@@ -301,15 +301,15 @@
       "displayTeam": "Omniscye",
       "name": "Better_DeadHead",
       "displayName": "Better DeadHead",
-      "downloads": 63231,
+      "downloads": 63248,
       "ratings": 3,
       "version": "1.0.4",
       "description": "Steer your Dead Head with WASD after you die. Zip around the map, poke at chaos!",
       "updated": "2026-02-24T16:33:00.403935Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Better_DeadHead/",
       "categories": [
-        "Mods",
         "Server-side",
+        "Mods",
         "AI Generated"
       ]
     },
@@ -319,17 +319,17 @@
       "displayTeam": "Omniscye",
       "name": "Coilhead_Enemy",
       "displayName": "Coilhead Enemy",
-      "downloads": 57270,
+      "downloads": 57324,
       "ratings": 7,
       "version": "1.1.2",
       "description": "Adds a Tier 3 Lethal Company Coilhead enemy to REPO, original sounds, freeze-when-seen behavior, and custom neck bounce physics.",
       "updated": "2026-05-31T02:20:15.940892Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Coilhead_Enemy/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -339,18 +339,18 @@
       "displayTeam": "Omniscye",
       "name": "Mystery_Box",
       "displayName": "Mystery Box",
-      "downloads": 53145,
+      "downloads": 53174,
       "ratings": 3,
       "version": "2.0.0",
       "description": "Turns the Charging Station into a Mystery Box! Drop in Enemy Valuables (Orbs) to roll for random items, upgrades, or weapons.",
       "updated": "2026-06-14T00:21:35.639520Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Mystery_Box/",
       "categories": [
-        "Mods",
         "Items",
         "Upgrades",
         "Weapons",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -359,17 +359,17 @@
       "displayTeam": "Omniscye",
       "name": "REPO_Map_Party",
       "displayName": "REPO Map Party",
-      "downloads": 50626,
+      "downloads": 50639,
       "ratings": 3,
       "version": "1.1.3",
       "description": "No more debates! Just spin the wheel! The next map is chosen in style with a flashy landing. Works with modded maps too, so every new level joins the party automatically.",
       "updated": "2026-02-23T22:32:13.047529Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/REPO_Map_Party/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -379,7 +379,7 @@
       "displayTeam": "Omniscye",
       "name": "Better_Rotation",
       "displayName": "Better Rotation",
-      "downloads": 45651,
+      "downloads": 45659,
       "ratings": 3,
       "version": "1.0.1",
       "description": "Tames item rotation so high Strength doesn’t overspin; smoother, more controllable turning.",
@@ -397,17 +397,17 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Twilight_Forest_Compat_Patch",
       "displayName": "Empress Twilight Forest Compat Patch",
-      "downloads": 44618,
+      "downloads": 44655,
       "ratings": 4,
       "version": "3.5.0",
       "description": "Compatibility fix that updates Minecraft Twilight Forest to work with the current version of REPO and adds the new Vehicle Charger to the Truck.",
       "updated": "2026-06-05T00:09:35.744352Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Twilight_Forest_Compat_Patch/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -416,16 +416,16 @@
       "displayTeam": "Omniscye",
       "name": "PortalCore_Valuables",
       "displayName": "PortalCore Valuables",
-      "downloads": 44497,
+      "downloads": 44504,
       "ratings": 8,
       "version": "1.0.7",
       "description": "Adds 3 Portal Cores into the game with almost 2000 lines of dialog as valuables! 2 of them have special abilities.",
       "updated": "2026-02-24T01:18:20.033844Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/PortalCore_Valuables/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Valuables",
-        "Server-side"
+        "Valuables"
       ]
     },
     {
@@ -434,18 +434,18 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Backrooms",
       "displayName": "Empress Backrooms",
-      "downloads": 43928,
+      "downloads": 44042,
       "ratings": 10,
       "version": "1.0.1",
       "description": "A shifting Backrooms level for REPO. Take the elevator down, Extract and take the elevator out... Goodluck.",
       "updated": "2026-06-16T23:01:32.503988Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Backrooms/",
       "categories": [
-        "Mods",
         "Monsters",
         "Levels",
         "Client-side",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -472,18 +472,18 @@
       "displayTeam": "Omniscye",
       "name": "BlackBox_Fixer",
       "displayName": "BlackBox Fixer",
-      "downloads": 43085,
+      "downloads": 43103,
       "ratings": 1,
       "version": "2.1.0",
       "description": "This mod makes BlackBox work for the current version of REPO.",
       "updated": "2026-06-25T02:18:41.220374Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/BlackBox_Fixer/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Misc",
         "Valuables",
-        "Client-side",
-        "Server-side"
+        "Misc",
+        "Client-side"
       ]
     },
     {
@@ -492,16 +492,16 @@
       "displayTeam": "Omniscye",
       "name": "Interactive_Truck_Door",
       "displayName": "Interactive Truck Door",
-      "downloads": 41332,
+      "downloads": 41358,
       "ratings": 6,
       "version": "1.1.2",
       "description": "Grab the truck door and open or close it manually.",
       "updated": "2026-05-31T02:00:50.456149Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Interactive_Truck_Door/",
       "categories": [
+        "Server-side",
         "Mods",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -511,17 +511,17 @@
       "displayTeam": "Omniscye",
       "name": "The_Bracken",
       "displayName": "The Bracken",
-      "downloads": 40392,
+      "downloads": 40410,
       "ratings": 6,
       "version": "1.2.0",
       "description": "A cute version of the Bracken for REPO with a simple creepy model, very faithful Bracken-style logic, and deadly head-dragging hunts.",
       "updated": "2026-05-08T02:55:48.470375Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/The_Bracken/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -531,17 +531,17 @@
       "displayTeam": "Omniscye",
       "name": "Truck_Slot_Machine",
       "displayName": "Truck Slot Machine",
-      "downloads": 39059,
+      "downloads": 39115,
       "ratings": 5,
       "version": "1.0.2",
       "description": "Adds a working slot machine to the REPO truck with synced multiplayer spins, animated reels, configurable gamble costs, shop payouts that give money, and level payouts that give player upgrades.",
       "updated": "2026-05-31T02:24:06.022098Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Truck_Slot_Machine/",
       "categories": [
-        "Mods",
-        "Upgrades",
-        "Client-side",
         "Server-side",
+        "Mods",
+        "Client-side",
+        "Upgrades",
         "AI Generated"
       ]
     },
@@ -551,17 +551,17 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Hospital_Compat_Patch",
       "displayName": "Empress Hospital Compat Patch",
-      "downloads": 36817,
+      "downloads": 36837,
       "ratings": 1,
       "version": "3.5.0",
       "description": "Compatibility fix that updates Hospital Level to work with the current version of REPO and adds the Vehicle Charger to the Truck.",
       "updated": "2026-06-05T01:58:48.312452Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Hospital_Compat_Patch/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -570,17 +570,17 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Mausoleum_Compat_Patch",
       "displayName": "Empress Mausoleum Compat Patch",
-      "downloads": 35701,
+      "downloads": 35715,
       "ratings": 3,
       "version": "3.5.0",
       "description": "Compatibility fix that patches MelanieMelicious's outdated Mausoleum level to work on current version of REPO and adds the new Vehicle Charger to the Truck.",
       "updated": "2026-06-05T00:21:29.347998Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Mausoleum_Compat_Patch/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -590,17 +590,18 @@
       "displayTeam": "Omniscye",
       "name": "Echohold_Station_Fix",
       "displayName": "Echohold Station Fix",
-      "downloads": 34111,
+      "downloads": 34126,
       "ratings": 4,
       "version": "3.5.0",
       "description": "Compatibility fix for the current version of R.E.P.O. Updates Echohold Station and Plasma Weapons, and adds the Vehicle Charger to the Truck.",
       "updated": "2026-06-05T00:04:55.385227Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Echohold_Station_Fix/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side"
+        "AI Generated"
       ]
     },
     {
@@ -609,16 +610,16 @@
       "displayTeam": "Omniscye",
       "name": "Empress_BetterUpgradesFixer",
       "displayName": "Empress BetterUpgradesFixer",
-      "downloads": 31340,
+      "downloads": 31348,
       "ratings": 3,
       "version": "1.1.2",
       "description": "Fixes Zonk's BetterUpgrades for REPO v0.3x! Strength, Health, Stamina, Range, Extra Jump, Sprint and Tumble upgrades now have tier two and tier three variants working again.",
       "updated": "2026-02-26T20:50:49.840830Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_BetterUpgradesFixer/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Upgrades",
-        "Server-side"
+        "Upgrades"
       ]
     },
     {
@@ -627,7 +628,7 @@
       "displayTeam": "Omniscye",
       "name": "FullBright",
       "displayName": "FullBright",
-      "downloads": 31120,
+      "downloads": 31124,
       "ratings": 5,
       "version": "2.0.0",
       "description": "FullBright makes your game Bright and Clean - Also gets rid of fog!",
@@ -635,8 +636,8 @@
       "url": "https://thunderstore.io/c/repo/p/Omniscye/FullBright/",
       "categories": [
         "Mods",
-        "Client-side",
-        "Cosmetics"
+        "Cosmetics",
+        "Client-side"
       ]
     },
     {
@@ -645,16 +646,16 @@
       "displayTeam": "Omniscye",
       "name": "StaminaToEnergy",
       "displayName": "StaminaToEnergy",
-      "downloads": 30915,
+      "downloads": 30918,
       "ratings": 4,
       "version": "1.0.1",
       "description": "Convert your stamina into weapon energy by holding the activation key while carrying or equipping a weapon. Fully synced. Simple, fast, and configurable.",
       "updated": "2026-02-24T16:30:02.339398Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/StaminaToEnergy/",
       "categories": [
+        "Server-side",
         "Mods",
         "Weapons",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -664,16 +665,16 @@
       "displayTeam": "Omniscye",
       "name": "PropHunt",
       "displayName": "PropHunt",
-      "downloads": 30897,
+      "downloads": 30898,
       "ratings": 8,
       "version": "2.0.1",
       "description": "PropHunt - Hide as valuables, hunt the fakes. Multiplayer game mode.",
       "updated": "2026-05-31T02:08:48.586706Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/PropHunt/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -682,7 +683,7 @@
       "displayTeam": "Omniscye",
       "name": "SemiBot_Train_Menu",
       "displayName": "SemiBot Train Menu",
-      "downloads": 30892,
+      "downloads": 30893,
       "ratings": 6,
       "version": "1.1.1",
       "description": "Replaces the REPO main menu with SemiBot on a train, while a duck peeks in the window. v0.3 Update Compatible!",
@@ -690,8 +691,8 @@
       "url": "https://thunderstore.io/c/repo/p/Omniscye/SemiBot_Train_Menu/",
       "categories": [
         "Mods",
-        "Client-side",
         "Cosmetics",
+        "Client-side",
         "AI Generated"
       ]
     },
@@ -701,17 +702,17 @@
       "displayTeam": "Omniscye",
       "name": "Jester_Enemy",
       "displayName": "Jester Enemy",
-      "downloads": 30519,
+      "downloads": 30561,
       "ratings": 5,
       "version": "1.1.0",
       "description": "Adds a very rare Tier 3 Jester enemy that is inspired by The Jester from Lethal Company.",
       "updated": "2026-05-08T02:55:11.547446Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Jester_Enemy/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -721,15 +722,15 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Achievements",
       "displayName": "Empress Achievements",
-      "downloads": 29590,
+      "downloads": 29593,
       "ratings": 8,
       "version": "2.0.1",
       "description": "Adds 236 achievements to REPO! Has popups with sound, an F8 achievements menu, save tracking, and in-game config support.",
       "updated": "2026-05-08T02:14:45.679641Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Achievements/",
       "categories": [
-        "Mods",
         "Client-side",
+        "Mods",
         "Cosmetics"
       ]
     },
@@ -739,16 +740,16 @@
       "displayTeam": "Omniscye",
       "name": "Enemies_Anywhere",
       "displayName": "Enemies Anywhere",
-      "downloads": 28289,
+      "downloads": 28296,
       "ratings": 2,
       "version": "1.2.0",
       "description": "No more safe hallways. Enemies Anywhere makes every room fair game for first spawns. Balanced, tense, unpredictable fun - with full config support. Host-only mod.",
       "updated": "2025-11-17T20:02:25.555661Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Enemies_Anywhere/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -758,7 +759,7 @@
       "displayTeam": "Omniscye",
       "name": "Empress_FlashlightControl",
       "displayName": "Empress FlashlightControl",
-      "downloads": 27854,
+      "downloads": 27857,
       "ratings": 1,
       "version": "1.0.2",
       "description": "Seize control of your flashlight's brightness and toggle power. Toggle it on/off while crouching also!",
@@ -775,7 +776,7 @@
       "displayTeam": "Omniscye",
       "name": "BotFriends",
       "displayName": "BotFriends",
-      "downloads": 27702,
+      "downloads": 27710,
       "ratings": 9,
       "version": "3.6.0",
       "description": "Spawn a squad of bot friends that follow you around, grab nearby valuables, and haul them to the extractor like loyal little loot-goblins. Singleplayer Only. WIP.",
@@ -793,18 +794,18 @@
       "displayTeam": "Omniscye",
       "name": "Pocket_Dimension_Cart",
       "displayName": "Pocket Dimension Cart",
-      "downloads": 26912,
+      "downloads": 26958,
       "ratings": 4,
       "version": "1.6.8",
       "description": "Turns REPO carts into pocket dimensions that store valuables, sync cart loot, and let players enter the cart to manage the stash if they choose.",
       "updated": "2026-09-09T01:47:58.145252Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Pocket_Dimension_Cart/",
       "categories": [
-        "Mods",
         "Valuables",
         "Items",
         "Client-side",
         "Server-side",
+        "Mods",
         "AI Generated"
       ]
     },
@@ -814,15 +815,15 @@
       "displayTeam": "Omniscye",
       "name": "TruckRespawn",
       "displayName": "TruckRespawn",
-      "downloads": 26229,
+      "downloads": 26242,
       "ratings": 2,
       "version": "1.0.1",
       "description": "Revives players inside the truck after a host-controlled delay.",
       "updated": "2026-02-26T21:17:47.659813Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/TruckRespawn/",
       "categories": [
-        "Mods",
         "Server-side",
+        "Mods",
         "AI Generated"
       ]
     },
@@ -832,17 +833,17 @@
       "displayTeam": "Omniscye",
       "name": "OIA_Valuable",
       "displayName": "OIA Valuable",
-      "downloads": 25140,
+      "downloads": 25145,
       "ratings": 2,
       "version": "1.1.3",
       "description": "A Valuable that ascended into a rave demon. Spins to the beat, explodes with lights, and summons ghost cats when the bass hits.",
       "updated": "2026-02-24T01:21:47.665093Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/OIA_Valuable/",
       "categories": [
-        "Mods",
-        "Audio",
-        "Valuables",
         "Server-side",
+        "Mods",
+        "Valuables",
+        "Audio",
         "AI Generated"
       ]
     },
@@ -852,17 +853,17 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Woodland_Mansion_Compat_Patch",
       "displayName": "Empress Woodland Mansion Compat Patch",
-      "downloads": 24438,
+      "downloads": 24466,
       "ratings": 3,
       "version": "2.0.0",
       "description": "A compatibility fix that patches Woodland Mansion to work on current REPOLib and REPO.",
       "updated": "2026-05-09T03:00:28.929512Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Woodland_Mansion_Compat_Patch/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -872,17 +873,17 @@
       "displayTeam": "Omniscye",
       "name": "CreepyMita_Enemy",
       "displayName": "CreepyMita Enemy",
-      "downloads": 24195,
+      "downloads": 24204,
       "ratings": 3,
       "version": "1.1.2",
       "description": "Cursed Creepy Mita is glitching and has entered REPO.",
       "updated": "2026-05-31T02:19:50.753909Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/CreepyMita_Enemy/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -892,7 +893,7 @@
       "displayTeam": "Omniscye",
       "name": "Monster_Archive",
       "displayName": "Monster Archive",
-      "downloads": 24104,
+      "downloads": 24107,
       "ratings": 1,
       "version": "1.0.5",
       "description": "Access the R.E.P.O. Archive to view detailed lore, health, damage, and visual data for every known monster.",
@@ -911,7 +912,7 @@
       "displayTeam": "Empress",
       "name": "The_Elevator",
       "displayName": "The Elevator",
-      "downloads": 23546,
+      "downloads": 23563,
       "ratings": 4,
       "version": "2.2.1",
       "description": "A 100-floor elevator level for REPO where every stop opens into a random good or bad event, creepy challenges, solo errands, jackpots, and cabin disasters.",
@@ -931,15 +932,15 @@
       "displayTeam": "Omniscye",
       "name": "SpectatorPLUS",
       "displayName": "SpectatorPLUS",
-      "downloads": 23361,
+      "downloads": 23371,
       "ratings": 2,
       "version": "1.0.0",
       "description": "Spectator++ enhances death spectating with synced Health and Stamina tracking across players. Works in multiplayer when all players use the mod. Beta version.",
       "updated": "2026-02-26T21:15:04.683780Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/SpectatorPLUS/",
       "categories": [
-        "Mods",
         "Server-side",
+        "Mods",
         "AI Generated"
       ]
     },
@@ -949,18 +950,18 @@
       "displayTeam": "Omniscye",
       "name": "BanEnforcer",
       "displayName": "BanEnforcer",
-      "downloads": 22386,
+      "downloads": 22388,
       "ratings": 3,
       "version": "4.0.1",
       "description": "BanEnforcer hands REPO hosts a proper Steam64 ban hammer with a clean in-game panel, bans that actually stick between sessions and real enforcement.",
       "updated": "2026-06-18T22:24:12.461022Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/BanEnforcer/",
       "categories": [
+        "Server-side",
         "Mods",
         "Tools",
-        "Server-side",
-        "AI Generated",
-        "Quality Of Life"
+        "Quality Of Life",
+        "AI Generated"
       ]
     },
     {
@@ -969,17 +970,17 @@
       "displayTeam": "Omniscye",
       "name": "SlenderTubby_Enemy",
       "displayName": "SlenderTubby Enemy",
-      "downloads": 22116,
+      "downloads": 22158,
       "ratings": 3,
       "version": "1.0.0",
       "description": "Adds a Tier 1 SlenderTubby enemy to REPO.",
       "updated": "2026-05-03T00:14:47.995492Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/SlenderTubby_Enemy/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -989,15 +990,15 @@
       "displayTeam": "Omniscye",
       "name": "Empress_HostSwap",
       "displayName": "Empress HostSwap",
-      "downloads": 21878,
+      "downloads": 21881,
       "ratings": 3,
       "version": "1.0.1",
       "description": "If the host leaves, the game continues! Re-rolls the same level, re-syncs physics, and keeps everyone playing. A flashy UI shows the new host as the crown passes on. All players MUST have this mod installed.",
       "updated": "2026-02-24T16:31:34.148913Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_HostSwap/",
       "categories": [
-        "Mods",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -1006,17 +1007,17 @@
       "displayTeam": "Omniscye",
       "name": "Kermits_Shop",
       "displayName": "Kermits Shop",
-      "downloads": 21097,
+      "downloads": 21116,
       "ratings": 2,
       "version": "2.0.1",
       "description": "Kermit has set up a sketchy little shop inside your truck and he really wants your money. Press E to talk to the frog and buy items.",
       "updated": "2026-06-06T17:14:35.033738Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Kermits_Shop/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -1025,7 +1026,7 @@
       "displayTeam": "Omniscye",
       "name": "Strange_Doors",
       "displayName": "Strange Doors",
-      "downloads": 21096,
+      "downloads": 21107,
       "ratings": 2,
       "version": "1.1.0",
       "description": "A 5 percent chance to touch a strange door and be flipped into the upside down version of the level.",
@@ -1043,17 +1044,17 @@
       "displayTeam": "Omniscye",
       "name": "Empress_ArenaLoaderAPI",
       "displayName": "Empress ArenaLoaderAPI",
-      "downloads": 20169,
+      "downloads": 20178,
       "ratings": 2,
       "version": "1.0.1",
       "description": "A developer focused API for R.E.P.O. that enables custom Arena loading with automatic RNG selection, networking support, and BepInEx config integration.",
       "updated": "2026-01-31T01:40:32.117305Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_ArenaLoaderAPI/",
       "categories": [
+        "Server-side",
         "Tools",
         "Libraries",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -1062,7 +1063,7 @@
       "displayTeam": "Omniscye",
       "name": "NoRecoil_Cart_Cannon",
       "displayName": "NoRecoil Cart Cannon",
-      "downloads": 19034,
+      "downloads": 19035,
       "ratings": 2,
       "version": "1.0.2",
       "description": "Removes all recoil from the Cart Cannon. Simple, stable.",
@@ -1070,10 +1071,10 @@
       "url": "https://thunderstore.io/c/repo/p/Omniscye/NoRecoil_Cart_Cannon/",
       "categories": [
         "Mods",
-        "Items",
         "Weapons",
         "Client-side",
         "Server-side",
+        "Items",
         "AI Generated"
       ]
     },
@@ -1083,17 +1084,17 @@
       "displayTeam": "Omniscye",
       "name": "TF2Minigun_Fix",
       "displayName": "TF2Minigun Fix",
-      "downloads": 18735,
+      "downloads": 18752,
       "ratings": 4,
       "version": "1.0.0",
       "description": "Compatibility fix that updates TF2 Minigun for current REPOLib and REPO, including ammo and battery behavior fixes.",
       "updated": "2026-04-08T04:16:19.895771Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/TF2Minigun_Fix/",
       "categories": [
+        "Server-side",
         "Mods",
         "Weapons",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1103,17 +1104,17 @@
       "displayTeam": "Omniscye",
       "name": "BigNuke_Fix",
       "displayName": "BigNuke Fix",
-      "downloads": 18452,
+      "downloads": 18494,
       "ratings": 1,
       "version": "1.0.0",
       "description": "Compatibility fix that updates BigNuke to work with the current version of REPO.",
       "updated": "2026-04-17T00:54:49.021153Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/BigNuke_Fix/",
       "categories": [
-        "Mods",
         "Valuables",
-        "Client-side",
+        "Mods",
         "Server-side",
+        "Client-side",
         "AI Generated"
       ]
     },
@@ -1123,7 +1124,7 @@
       "displayTeam": "Omniscye",
       "name": "Empress_InfiniteGrab",
       "displayName": "Empress InfiniteGrab",
-      "downloads": 18424,
+      "downloads": 18433,
       "ratings": 2,
       "version": "1.0.1",
       "description": "Hold onto anything even if tumbled or hit!",
@@ -1141,16 +1142,16 @@
       "displayTeam": "Omniscye",
       "name": "No_Moon_Phases",
       "displayName": "No Moon Phases",
-      "downloads": 17867,
+      "downloads": 17878,
       "ratings": 2,
       "version": "1.0.2",
       "description": "No more Moon phases.",
       "updated": "2026-02-24T16:26:27.975323Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/No_Moon_Phases/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -1159,17 +1160,17 @@
       "displayTeam": "Omniscye",
       "name": "Zelda_Lottery_Shop",
       "displayName": "Zelda Lottery Shop",
-      "downloads": 17693,
+      "downloads": 17695,
       "ratings": 3,
       "version": "1.3.1",
       "description": "Replaces the standard shop with a Zelda themed Lottery Shop. Features new shelves, music, and an interactive Gerudo NPC.",
       "updated": "2026-02-24T16:10:58.746639Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Zelda_Lottery_Shop/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -1178,16 +1179,16 @@
       "displayTeam": "Omniscye",
       "name": "Trampoline",
       "displayName": "Trampoline",
-      "downloads": 17392,
+      "downloads": 17393,
       "ratings": 1,
       "version": "1.0.0",
       "description": "Adds a Trampoline as an item in the shop to buy! Bounce Enemies and Players around!",
       "updated": "2025-12-26T23:58:41.086453Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Trampoline/",
       "categories": [
-        "Mods",
+        "Server-side",
         "Items",
-        "Server-side"
+        "Mods"
       ]
     },
     {
@@ -1196,19 +1197,19 @@
       "displayTeam": "Omniscye",
       "name": "Easter_Egg",
       "displayName": "Easter Egg",
-      "downloads": 17083,
+      "downloads": 17088,
       "ratings": 2,
       "version": "1.0.0",
       "description": "A high stakes gamble! Buy this Easter Egg and throw it for a chance at massive loot... or a massive explosion.",
       "updated": "2025-12-26T14:36:02.696799Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Easter_Egg/",
       "categories": [
-        "Mods",
         "Valuables",
         "Items",
         "Upgrades",
         "Weapons",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -1217,17 +1218,17 @@
       "displayTeam": "Omniscye",
       "name": "Bowling",
       "displayName": "Bowling",
-      "downloads": 16758,
+      "downloads": 16774,
       "ratings": 3,
       "version": "2.0.0",
       "description": "Adds a Bowling level to play solo or with friends.",
       "updated": "2026-06-21T17:47:12.862437Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Bowling/",
       "categories": [
-        "Mods",
         "Valuables",
-        "Levels",
+        "Mods",
         "Server-side",
+        "Levels",
         "AI Generated"
       ]
     },
@@ -1237,17 +1238,17 @@
       "displayTeam": "Omniscye",
       "name": "Gooby_Enemy",
       "displayName": "Gooby Enemy",
-      "downloads": 16335,
+      "downloads": 16342,
       "ratings": 2,
       "version": "1.0.1",
       "description": "A cute but dangerous Gooby enemy for REPO that wanders passively, grabs and throws players when hurt, and can Digivolve into a deadly fusion version.",
       "updated": "2026-04-12T00:01:18.709913Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Gooby_Enemy/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1257,18 +1258,18 @@
       "displayTeam": "Omniscye",
       "name": "PT",
       "displayName": "PT",
-      "downloads": 16020,
+      "downloads": 16068,
       "ratings": 5,
       "version": "1.0.3",
       "description": "A corridor horror level with a stalking entity and events. Escape or die.",
       "updated": "2026-07-05T14:23:02.345989Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/PT/",
       "categories": [
-        "Mods",
         "Monsters",
         "Levels",
         "Client-side",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -1277,17 +1278,17 @@
       "displayTeam": "Omniscye",
       "name": "Swordsmachine",
       "displayName": "Swordsmachine",
-      "downloads": 14777,
+      "downloads": 14783,
       "ratings": 2,
       "version": "1.2.0",
       "description": "A Swordsmachine enemy for REPO that wanders the map, spots players with line of sight, then dashes in with a deadly sword slam.",
       "updated": "2026-05-08T02:55:31.722160Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Swordsmachine/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1297,18 +1298,18 @@
       "displayTeam": "Omniscye",
       "name": "Empress_The_Hollow",
       "displayName": "Empress The Hollow",
-      "downloads": 14292,
+      "downloads": 14322,
       "ratings": 5,
       "version": "1.0.1",
       "description": "Enter The Hollow, where one of the trees is stalking you through a massive moonlit forest. It only moves when nobody is looking.",
       "updated": "2026-07-19T14:25:03.197959Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_The_Hollow/",
       "categories": [
-        "Mods",
         "Monsters",
         "Levels",
         "Client-side",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -1317,7 +1318,7 @@
       "displayTeam": "Omniscye",
       "name": "Empress_SmartMap",
       "displayName": "Empress SmartMap",
-      "downloads": 13587,
+      "downloads": 13591,
       "ratings": 3,
       "version": "1.1.0",
       "description": "Empress SmartMap upgrades the vanilla map with client side player, monster, and valuable intel markers.",
@@ -1335,16 +1336,16 @@
       "displayTeam": "Omniscye",
       "name": "Smoke_Bomb",
       "displayName": "Smoke Bomb",
-      "downloads": 13375,
+      "downloads": 13379,
       "ratings": 2,
       "version": "1.0.1",
       "description": "Adds a new Smoke Bomb item into the shop to purchase. Arm it by pressing E and smash it into the ground to teleport to a random location on the map. Perfect for emergencies!",
       "updated": "2025-12-27T18:18:44.541834Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Smoke_Bomb/",
       "categories": [
-        "Mods",
-        "Items",
         "Server-side",
+        "Items",
+        "Mods",
         "AI Generated"
       ]
     },
@@ -1354,16 +1355,16 @@
       "displayTeam": "Omniscye",
       "name": "PlayerReportCard",
       "displayName": "PlayerReportCard",
-      "downloads": 13276,
+      "downloads": 13278,
       "ratings": 1,
       "version": "1.0.2",
       "description": "A Host-only mod that tracks player statistics and assigns performance grades based on survival, damage taken, and deaths.",
       "updated": "2026-02-26T00:21:40.115238Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/PlayerReportCard/",
       "categories": [
+        "Server-side",
         "Mods",
         "Tools",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1373,17 +1374,17 @@
       "displayTeam": "Omniscye",
       "name": "Valorant_Weapon_Fix",
       "displayName": "Valorant Weapon Fix",
-      "downloads": 13053,
+      "downloads": 13057,
       "ratings": 1,
       "version": "1.0.1",
       "description": "Compatibility fix that updates Valorant weapons for current REPOLib and REPO, including ammo and battery behavior fixes.",
       "updated": "2026-04-08T03:02:06.376963Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Valorant_Weapon_Fix/",
       "categories": [
+        "Server-side",
         "Mods",
         "Weapons",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1393,18 +1394,18 @@
       "displayTeam": "Omniscye",
       "name": "M79_Grenade_Launcher",
       "displayName": "M79 Grenade Launcher",
-      "downloads": 12638,
+      "downloads": 12655,
       "ratings": 2,
       "version": "1.0.1",
       "description": "Adds the M79 Grenade Launcher to REPO. This custom weapon fires real grenade items from the launcher when you shoot it.",
       "updated": "2026-04-27T21:08:29.127395Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/M79_Grenade_Launcher/",
       "categories": [
-        "Mods",
         "Items",
         "Weapons",
         "Client-side",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -1413,17 +1414,17 @@
       "displayTeam": "Omniscye",
       "name": "GhostGirl_Enemy",
       "displayName": "GhostGirl Enemy",
-      "downloads": 12009,
+      "downloads": 12052,
       "ratings": 3,
       "version": "1.0.1",
       "description": "Adds a Tier 3 Lethal Company Ghost Girl enemy to REPO with original and unique behaviour.",
       "updated": "2026-05-02T17:58:12.706118Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/GhostGirl_Enemy/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1433,18 +1434,18 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Shop_Price_Editor",
       "displayName": "Empress Shop Price Editor",
-      "downloads": 11414,
+      "downloads": 11416,
       "ratings": 1,
       "version": "1.0.2",
       "description": "Allows the Host to easily edit prices for all Vanilla and Modded shop items via config.",
       "updated": "2026-01-07T02:41:00.424750Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Shop_Price_Editor/",
       "categories": [
-        "Mods",
-        "Tools",
         "Items",
         "Upgrades",
         "Server-side",
+        "Mods",
+        "Tools",
         "AI Generated"
       ]
     },
@@ -1454,18 +1455,18 @@
       "displayTeam": "Omniscye",
       "name": "Bowser_Boss_Battle",
       "displayName": "Bowser Boss Battle",
-      "downloads": 11066,
+      "downloads": 11147,
       "ratings": 4,
       "version": "1.0.3",
       "description": "Fight Bowser in a lava arena. Dodge his fire, grab his glowing tail and throw him into the lava three times, then take his Star.",
       "updated": "2026-09-09T01:48:43.104802Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Bowser_Boss_Battle/",
       "categories": [
-        "Mods",
         "Monsters",
         "Levels",
         "Client-side",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -1474,17 +1475,17 @@
       "displayTeam": "Omniscye",
       "name": "P90_Weapon_Fix",
       "displayName": "P90 Weapon Fix",
-      "downloads": 10842,
+      "downloads": 10856,
       "ratings": 1,
       "version": "1.0.0",
       "description": "Compatibility fix that patches DougHRito's outdated P90 weapon to work on current REPOLib and REPO, including ammo and charging behavior fixes.",
       "updated": "2026-04-08T02:12:46.415296Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/P90_Weapon_Fix/",
       "categories": [
+        "Server-side",
         "Mods",
         "Weapons",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1494,7 +1495,7 @@
       "displayTeam": "Omniscye",
       "name": "Living_Room_Main_Menu",
       "displayName": "Living Room Main Menu",
-      "downloads": 9515,
+      "downloads": 9518,
       "ratings": 2,
       "version": "1.0.0",
       "description": "Replaces the default main menu with a cozy living room scene. Features chill music, animations, and a SemiBot drinking.",
@@ -1502,8 +1503,8 @@
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Living_Room_Main_Menu/",
       "categories": [
         "Mods",
-        "Client-side",
         "Cosmetics",
+        "Client-side",
         "AI Generated"
       ]
     },
@@ -1513,18 +1514,18 @@
       "displayTeam": "Omniscye",
       "name": "PartyAnimal_Weapons",
       "displayName": "PartyAnimal Weapons",
-      "downloads": 9463,
+      "downloads": 9473,
       "ratings": 2,
       "version": "1.0.2",
       "description": "Adds 4 cursed Party Animals weapons to REPO.",
       "updated": "2026-05-31T02:13:20.263157Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/PartyAnimal_Weapons/",
       "categories": [
-        "Mods",
         "Items",
         "Weapons",
         "Client-side",
         "Server-side",
+        "Mods",
         "AI Generated"
       ]
     },
@@ -1534,7 +1535,7 @@
       "displayTeam": "Omniscye",
       "name": "Auto_Region",
       "displayName": "Auto Region",
-      "downloads": 9214,
+      "downloads": 9217,
       "ratings": 2,
       "version": "1.0.1",
       "description": "Remembers the region you click once (Public & Private). Auto-selects that region next time, skipping the picker. Supports all in-game regions. Single config with optional jump straight to Server List.",
@@ -1552,16 +1553,16 @@
       "displayTeam": "Omniscye",
       "name": "Inventory_Viewer",
       "displayName": "Inventory Viewer",
-      "downloads": 8727,
+      "downloads": 8729,
       "ratings": 2,
       "version": "1.2.1",
       "description": "Stop asking 'who has the gun?' and just look. A host-only tool because I don't trust you to tell the truth about what is in your own pockets.",
       "updated": "2026-02-24T16:17:27.890573Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Inventory_Viewer/",
       "categories": [
+        "Server-side",
         "Mods",
         "Tools",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1571,17 +1572,17 @@
       "displayTeam": "Omniscye",
       "name": "Lightsaber_Mod_Fix",
       "displayName": "Lightsaber Mod Fix",
-      "downloads": 8566,
+      "downloads": 8575,
       "ratings": 2,
       "version": "1.0.0",
       "description": "Compatibility fix that patches KT57's outdated Lightsaber mod to work on current REPOLib and REPO, including behavior and compatibility fixes.",
       "updated": "2026-04-10T03:39:12.222951Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Lightsaber_Mod_Fix/",
       "categories": [
+        "Server-side",
         "Mods",
         "Weapons",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1591,17 +1592,17 @@
       "displayTeam": "Omniscye",
       "name": "The_Club",
       "displayName": "The Club",
-      "downloads": 8448,
+      "downloads": 8474,
       "ratings": 2,
       "version": "1.0.0",
       "description": "A nightclub added to the shop rotation with a talking semibots, dances, slap fights, a stage dancer and club music. Shopping no, vibes mandatory.",
       "updated": "2026-07-13T21:59:56.517227Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/The_Club/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -1610,7 +1611,7 @@
       "displayTeam": "Omniscye",
       "name": "Truck_Compass",
       "displayName": "Truck Compass",
-      "downloads": 8295,
+      "downloads": 8296,
       "ratings": 2,
       "version": "1.0.1",
       "description": "A simple, tactical UI compass that points to the truck.",
@@ -1623,42 +1624,42 @@
       ]
     },
     {
-      "id": "Omniscye-YapYap_Valuables",
-      "team": "Omniscye",
-      "displayTeam": "Omniscye",
-      "name": "YapYap_Valuables",
-      "displayName": "YapYap Valuables",
-      "downloads": 7999,
-      "ratings": 3,
-      "version": "1.0.0",
-      "description": "Adds 20 YapYap themed valuables to REPO with grab sounds, animations, and cursed little grab effects.",
-      "updated": "2026-05-14T17:41:41.916746Z",
-      "url": "https://thunderstore.io/c/repo/p/Omniscye/YapYap_Valuables/",
-      "categories": [
-        "Mods",
-        "Valuables",
-        "Client-side",
-        "Server-side",
-        "AI Generated"
-      ]
-    },
-    {
       "id": "Omniscye-Pokemon_Cosmetics",
       "team": "Omniscye",
       "displayTeam": "Omniscye",
       "name": "Pokemon_Cosmetics",
       "displayName": "Pokemon Cosmetics",
-      "downloads": 7991,
+      "downloads": 8003,
       "ratings": 5,
       "version": "1.0.1",
       "description": "Adds animated Pokemon head cosmetics to REPO.",
       "updated": "2026-06-29T23:10:06.619906Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Pokemon_Cosmetics/",
       "categories": [
+        "Server-side",
         "Mods",
         "Client-side",
-        "Server-side",
         "Cosmetics"
+      ]
+    },
+    {
+      "id": "Omniscye-YapYap_Valuables",
+      "team": "Omniscye",
+      "displayTeam": "Omniscye",
+      "name": "YapYap_Valuables",
+      "displayName": "YapYap Valuables",
+      "downloads": 8000,
+      "ratings": 3,
+      "version": "1.0.0",
+      "description": "Adds 20 YapYap themed valuables to REPO with grab sounds, animations, and cursed little grab effects.",
+      "updated": "2026-05-14T17:41:41.916746Z",
+      "url": "https://thunderstore.io/c/repo/p/Omniscye/YapYap_Valuables/",
+      "categories": [
+        "Valuables",
+        "Mods",
+        "Server-side",
+        "Client-side",
+        "AI Generated"
       ]
     },
     {
@@ -1667,16 +1668,16 @@
       "displayTeam": "Omniscye",
       "name": "Be_A_Bot",
       "displayName": "Be A Bot",
-      "downloads": 7839,
+      "downloads": 7846,
       "ratings": 8,
       "version": "3.0.3",
       "description": "Surrender your free will. Be A Bot takes over your player and runs the job for you. It loots, extracts, starts the truck, and now defends itself when enemies get too close.",
       "updated": "2026-05-31T02:05:20.425805Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Be_A_Bot/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Tools",
-        "Server-side"
+        "Tools"
       ]
     },
     {
@@ -1703,17 +1704,17 @@
       "displayTeam": "Omniscye",
       "name": "Mita_Valuables",
       "displayName": "Mita Valuables",
-      "downloads": 7033,
+      "downloads": 7035,
       "ratings": 3,
       "version": "1.0.0",
       "description": "Adds 13 MiSide-themed Mita valuables to REPO with voicelines.",
       "updated": "2026-05-13T00:34:04.736781Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Mita_Valuables/",
       "categories": [
-        "Mods",
         "Valuables",
-        "Client-side",
+        "Mods",
         "Server-side",
+        "Client-side",
         "AI Generated"
       ]
     },
@@ -1723,18 +1724,18 @@
       "displayTeam": "Omniscye",
       "name": "Empress_SuperHot_Arena",
       "displayName": "Empress SuperHot Arena",
-      "downloads": 6922,
+      "downloads": 6929,
       "ratings": 3,
       "version": "1.1.2",
       "description": "A SuperHot style combat level for R.E.P.O. Clear every enemy to advance.",
       "updated": "2026-05-31T01:05:21.181351Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_SuperHot_Arena/",
       "categories": [
-        "Mods",
         "Monsters",
         "Levels",
         "Client-side",
         "Server-side",
+        "Mods",
         "AI Generated"
       ]
     },
@@ -1744,17 +1745,17 @@
       "displayTeam": "Omniscye",
       "name": "AWP_Counter_Strike_Fix",
       "displayName": "AWP Counter Strike Fix",
-      "downloads": 6882,
+      "downloads": 6891,
       "ratings": 2,
       "version": "1.0.0",
       "description": "Compatibility fix that updates AWP for current REPOLib and REPO, including ammo and battery behavior fixes.",
       "updated": "2026-04-08T03:33:53.514372Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/AWP_Counter_Strike_Fix/",
       "categories": [
+        "Server-side",
         "Mods",
         "Weapons",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1764,17 +1765,17 @@
       "displayTeam": "Omniscye",
       "name": "Fall_Guys",
       "displayName": "Fall Guys",
-      "downloads": 6616,
+      "downloads": 6633,
       "ratings": 2,
       "version": "1.0.1",
       "description": "Adds a Fall Guys level to REPO. Get to the end and get rewarded.",
       "updated": "2026-07-05T14:23:43.373946Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Fall_Guys/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1784,7 +1785,7 @@
       "displayTeam": "Empress",
       "name": "Date_Everything",
       "displayName": "Date Everything",
-      "downloads": 6419,
+      "downloads": 6427,
       "ratings": 1,
       "version": "2.0.1",
       "description": "Date 83 avatars in REPO. Flirt with items, walls, ceilings, enemies, extractors, carts, doors, valuables, and more. Build love, earn rewards, deal with jealousy, and unlock followers.",
@@ -1812,9 +1813,9 @@
       "updated": "2026-02-26T21:02:45.839792Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/HawkingTTS/",
       "categories": [
+        "Server-side",
         "Mods",
         "Audio",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1824,17 +1825,17 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Hub_World",
       "displayName": "Empress Hub World",
-      "downloads": 5685,
+      "downloads": 5689,
       "ratings": 2,
       "version": "1.0.2",
       "description": "Adds a hub world to REPO where players choose Vanilla and Modded levels by jumping into portals before each run.",
       "updated": "2026-07-19T14:25:35.237220Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Hub_World/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1844,17 +1845,17 @@
       "displayTeam": "Omniscye",
       "name": "Sisyphus_Compat_Patch",
       "displayName": "Sisyphus Compat Patch",
-      "downloads": 5680,
+      "downloads": 5686,
       "ratings": 0,
       "version": "2.0.1",
       "description": "Compatibility fix that updates Sisyphus Staircase Level to work with the current version of REPO.",
       "updated": "2026-05-09T02:44:27.093433Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Sisyphus_Compat_Patch/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1864,17 +1865,17 @@
       "displayTeam": "Omniscye",
       "name": "Tokyo_Race_Course",
       "displayName": "Tokyo Race Course",
-      "downloads": 5516,
+      "downloads": 5531,
       "ratings": 1,
       "version": "1.0.8",
       "description": "An RNG Umamusume style race in REPO. You spawn in the gates, they open, your runner takes off on its own. You don't drive. That's the point.",
       "updated": "2026-07-23T17:03:34.363357Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Tokyo_Race_Course/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -1883,17 +1884,17 @@
       "displayTeam": "Omniscye",
       "name": "Repo_Kart_Arena",
       "displayName": "Repo Kart Arena",
-      "downloads": 5477,
+      "downloads": 5480,
       "ratings": 1,
       "version": "1.1.0",
       "description": "Turns REPO's Race Arena into a chaotic Mario Kart style balloon battle.",
       "updated": "2026-05-13T22:36:01.052436Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Repo_Kart_Arena/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -1903,16 +1904,16 @@
       "displayTeam": "Omniscye",
       "name": "HackIt",
       "displayName": "HackIt",
-      "downloads": 5326,
+      "downloads": 5328,
       "ratings": 1,
       "version": "1.0.5",
       "description": "Hack valuables, shop items, extraction points, carts, and enemies in REPO with synced host-authoritative actions like value boosts, discounts, payout boosts, cart effects, and enemy disruption.",
       "updated": "2026-04-17T14:40:52.728125Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/HackIt/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -1921,17 +1922,17 @@
       "displayTeam": "Omniscye",
       "name": "Super_Nintendo_Valuables",
       "displayName": "Super Nintendo Valuables",
-      "downloads": 4928,
+      "downloads": 4949,
       "ratings": 2,
       "version": "1.0.0",
       "description": "Adds 100 SNES cartridge valuables to Repo. Grab a cart and its game music plays!",
       "updated": "2026-07-10T13:45:55.357572Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Super_Nintendo_Valuables/",
       "categories": [
-        "Mods",
         "Valuables",
-        "Client-side",
-        "Server-side"
+        "Mods",
+        "Server-side",
+        "Client-side"
       ]
     },
     {
@@ -1940,17 +1941,17 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Among_Us",
       "displayName": "Empress Among Us",
-      "downloads": 4620,
+      "downloads": 4635,
       "ratings": 4,
       "version": "1.0.3",
       "description": "An Among Us gamemode on the  Skeld map. Tasks, imposters, meetings and voting with your REPO crew.",
       "updated": "2026-07-18T06:07:21.127826Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Among_Us/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -1977,17 +1978,17 @@
       "displayTeam": "Omniscye",
       "name": "Mortal_Kombat",
       "displayName": "Mortal Kombat",
-      "downloads": 4238,
+      "downloads": 4268,
       "ratings": 2,
       "version": "1.1.1",
       "description": "Adds a Mortal Kombat Token as an item into the game to buy. Use it to 1v1 another player in Mortal Kombat.",
       "updated": "2026-07-20T20:06:28.257745Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Mortal_Kombat/",
       "categories": [
-        "Mods",
-        "Items",
-        "Client-side",
         "Server-side",
+        "Items",
+        "Mods",
+        "Client-side",
         "AI Generated"
       ]
     },
@@ -1997,17 +1998,17 @@
       "displayTeam": "Omniscye",
       "name": "Truck_Editor",
       "displayName": "Truck Editor",
-      "downloads": 4013,
+      "downloads": 4014,
       "ratings": 1,
       "version": "1.0.2",
       "description": "Decorate your truck, save custom layouts, and let hosts share their truck style across levels, truck lobbies, and shop runs to others!",
       "updated": "2026-03-22T22:02:01.854900Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Truck_Editor/",
       "categories": [
+        "Server-side",
         "Mods",
         "Tools",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -2017,17 +2018,17 @@
       "displayTeam": "Omniscye",
       "name": "Deku_Mask",
       "displayName": "Deku Mask",
-      "downloads": 3830,
+      "downloads": 3862,
       "ratings": 1,
       "version": "1.0.2",
       "description": "The Deku Mask transforms you into a Deku Scrub when it is used! You stay Deku until you die or the level ends. Blow bubbles at your enemies.",
       "updated": "2026-07-24T13:09:03.003264Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Deku_Mask/",
       "categories": [
-        "Mods",
+        "Server-side",
         "Items",
-        "Client-side",
-        "Server-side"
+        "Mods",
+        "Client-side"
       ]
     },
     {
@@ -2043,10 +2044,10 @@
       "updated": "2026-04-15T02:36:32.708468Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Beer_Valuable_Fix/",
       "categories": [
+        "Server-side",
         "Mods",
         "Valuables",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -2056,16 +2057,16 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Gameboy_Emulator",
       "displayName": "Empress Gameboy Emulator",
-      "downloads": 3694,
+      "downloads": 3695,
       "ratings": 2,
       "version": "1.0.1",
       "description": "Adds a Game Boy console to the REPO truck that boots a user supplied ROM from config and syncs live gameplay across the lobby.",
       "updated": "2026-05-23T02:03:49.899929Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Gameboy_Emulator/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -2074,17 +2075,17 @@
       "displayTeam": "Omniscye",
       "name": "Green_Shell",
       "displayName": "Green Shell",
-      "downloads": 3612,
+      "downloads": 3619,
       "ratings": 1,
       "version": "1.0.0",
       "description": "Buy the Green Shell from the shop. Drop it and it rips around the floor for 30 seconds. Anyone it touches gets tumbled and flung. It Damages enemies also.",
       "updated": "2026-07-16T16:23:56.061500Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Green_Shell/",
       "categories": [
-        "Mods",
+        "Server-side",
         "Items",
-        "Client-side",
-        "Server-side"
+        "Mods",
+        "Client-side"
       ]
     },
     {
@@ -2093,17 +2094,17 @@
       "displayTeam": "Omniscye",
       "name": "TemTem_Valuables",
       "displayName": "TemTem Valuables",
-      "downloads": 3554,
+      "downloads": 3557,
       "ratings": 2,
       "version": "1.1.0",
       "description": "Adds 188 TemTem valuables to Repo with sounds!",
       "updated": "2026-06-04T22:36:04.090605Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/TemTem_Valuables/",
       "categories": [
-        "Mods",
         "Valuables",
-        "Client-side",
-        "Server-side"
+        "Mods",
+        "Server-side",
+        "Client-side"
       ]
     },
     {
@@ -2119,10 +2120,10 @@
       "updated": "2026-04-20T22:26:19.756050Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Tubby_Wubby_Valuables/",
       "categories": [
+        "Server-side",
         "Mods",
         "Valuables",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -2138,9 +2139,9 @@
       "updated": "2026-05-10T02:43:19.275694Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Destructible_Environments/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -2162,41 +2163,41 @@
       ]
     },
     {
-      "id": "Omniscye-Sims_Cosmetics",
-      "team": "Omniscye",
-      "displayTeam": "Omniscye",
-      "name": "Sims_Cosmetics",
-      "displayName": "Sims Cosmetics",
-      "downloads": 3414,
-      "ratings": 1,
-      "version": "1.0.0",
-      "description": "Adds animated Sims Plumbob head cosmetics to REPO, with green, red, blue, yellow, black, pink, and orange versions.",
-      "updated": "2026-06-30T00:28:21.934267Z",
-      "url": "https://thunderstore.io/c/repo/p/Omniscye/Sims_Cosmetics/",
-      "categories": [
-        "Mods",
-        "Client-side",
-        "Server-side",
-        "Cosmetics"
-      ]
-    },
-    {
       "id": "Omniscye-Triforce",
       "team": "Omniscye",
       "displayTeam": "Omniscye",
       "name": "Triforce",
       "displayName": "Triforce",
-      "downloads": 3395,
+      "downloads": 3423,
       "ratings": 1,
       "version": "1.0.1",
       "description": "The Triforce Revives everyone, heals everyone, and blasts everything back.",
       "updated": "2026-07-17T15:58:58.803526Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Triforce/",
       "categories": [
-        "Mods",
+        "Server-side",
         "Items",
+        "Mods",
+        "Client-side"
+      ]
+    },
+    {
+      "id": "Omniscye-Sims_Cosmetics",
+      "team": "Omniscye",
+      "displayTeam": "Omniscye",
+      "name": "Sims_Cosmetics",
+      "displayName": "Sims Cosmetics",
+      "downloads": 3420,
+      "ratings": 1,
+      "version": "1.0.0",
+      "description": "Adds animated Sims Plumbob head cosmetics to REPO, with green, red, blue, yellow, black, pink, and orange versions.",
+      "updated": "2026-06-30T00:28:21.934267Z",
+      "url": "https://thunderstore.io/c/repo/p/Omniscye/Sims_Cosmetics/",
+      "categories": [
+        "Server-side",
+        "Mods",
         "Client-side",
-        "Server-side"
+        "Cosmetics"
       ]
     },
     {
@@ -2212,9 +2213,9 @@
       "updated": "2026-04-17T22:22:48.633336Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Coins/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -2223,17 +2224,17 @@
       "displayTeam": "Omniscye",
       "name": "Power_Star",
       "displayName": "Power Star",
-      "downloads": 3329,
+      "downloads": 3336,
       "ratings": 2,
       "version": "1.0.0",
       "description": "Buy the Power Star from the shop. Use it for 10 seconds of power! You move a bit faster but anything you touch dies, friends included.",
       "updated": "2026-07-16T14:12:16.178605Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Power_Star/",
       "categories": [
-        "Mods",
+        "Server-side",
         "Items",
-        "Client-side",
-        "Server-side"
+        "Mods",
+        "Client-side"
       ]
     },
     {
@@ -2242,18 +2243,18 @@
       "displayTeam": "Omniscye",
       "name": "Master_Hand_Boss",
       "displayName": "Master Hand Boss",
-      "downloads": 3299,
+      "downloads": 3325,
       "ratings": 1,
       "version": "1.0.1",
       "description": "Face Empress’s Master Hand in an arena. Destroy it and be rewarded.",
       "updated": "2026-06-24T21:45:02.573329Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Master_Hand_Boss/",
       "categories": [
-        "Mods",
         "Monsters",
         "Levels",
         "Client-side",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -2287,10 +2288,10 @@
       "updated": "2026-06-04T19:44:40.565763Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_The_Grid/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -2300,16 +2301,16 @@
       "displayTeam": "Omniscye",
       "name": "Empress_GraveStones",
       "displayName": "Empress GraveStones",
-      "downloads": 2605,
+      "downloads": 2606,
       "ratings": 2,
       "version": "1.0.1",
       "description": "Players who die leave a gravestone with their name and death note. Pray at a grave for a 50/50 holy revive or a fatal explosion.",
       "updated": "2026-06-07T06:02:02.332244Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_GraveStones/",
       "categories": [
+        "Server-side",
         "Mods",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -2318,7 +2319,7 @@
       "displayTeam": "Omniscye",
       "name": "Repo_Dynamic_Menus",
       "displayName": "Repo Dynamic Menus",
-      "downloads": 2592,
+      "downloads": 2593,
       "ratings": 1,
       "version": "2.0.0",
       "description": "Dynamic Menus using Real REPO levels! Base + Modded! Replaces the vanilla menu backdrop with a live generated level preview and custom menu music.",
@@ -2337,17 +2338,35 @@
       "displayTeam": "Omniscye",
       "name": "Digivolution",
       "displayName": "Digivolution",
-      "downloads": 2490,
+      "downloads": 2491,
       "ratings": 1,
       "version": "1.0.1",
       "description": "Low-health enemies can suddenly Digivolve into bigger, louder, deadlier forms.",
       "updated": "2026-04-12T03:06:45.601970Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Digivolution/",
       "categories": [
+        "Server-side",
         "Mods",
         "Monsters",
         "Client-side",
-        "Server-side",
+        "AI Generated"
+      ]
+    },
+    {
+      "id": "Omniscye-Empress_Cinematic",
+      "team": "Omniscye",
+      "displayTeam": "Omniscye",
+      "name": "Empress_Cinematic",
+      "displayName": "Empress Cinematic",
+      "downloads": 2397,
+      "ratings": 3,
+      "version": "2.0.0",
+      "description": "A movie making mod that lets you freecam and lock the camera angle to film your character in third person.",
+      "updated": "2026-05-16T20:00:02.813619Z",
+      "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Cinematic/",
+      "categories": [
+        "Mods",
+        "Client-side",
         "AI Generated"
       ]
     },
@@ -2370,24 +2389,6 @@
       ]
     },
     {
-      "id": "Omniscye-Empress_Cinematic",
-      "team": "Omniscye",
-      "displayTeam": "Omniscye",
-      "name": "Empress_Cinematic",
-      "displayName": "Empress Cinematic",
-      "downloads": 2396,
-      "ratings": 3,
-      "version": "2.0.0",
-      "description": "A movie making mod that lets you freecam and lock the camera angle to film your character in third person.",
-      "updated": "2026-05-16T20:00:02.813619Z",
-      "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Cinematic/",
-      "categories": [
-        "Mods",
-        "Client-side",
-        "AI Generated"
-      ]
-    },
-    {
       "id": "Omniscye-SuperBattleGolf_Valuables",
       "team": "Omniscye",
       "displayTeam": "Omniscye",
@@ -2400,10 +2401,10 @@
       "updated": "2026-05-15T02:17:08.685833Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/SuperBattleGolf_Valuables/",
       "categories": [
-        "Mods",
         "Valuables",
-        "Client-side",
+        "Mods",
         "Server-side",
+        "Client-side",
         "AI Generated"
       ]
     },
@@ -2413,15 +2414,15 @@
       "displayTeam": "Omniscye",
       "name": "ShopKeeper_Controller",
       "displayName": "ShopKeeper Controller",
-      "downloads": 2138,
+      "downloads": 2140,
       "ratings": 4,
       "version": "1.0.1",
       "description": "Host only config control for the Shop Keeper on/off switch. Lets the host control whether clients can press the Shop Keeper on/off switch.",
       "updated": "2026-05-31T02:11:05.550583Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/ShopKeeper_Controller/",
       "categories": [
-        "Mods",
         "Server-side",
+        "Mods",
         "Quality Of Life"
       ]
     },
@@ -2431,19 +2432,19 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Market_Core",
       "displayName": "Empress Market Core",
-      "downloads": 2054,
+      "downloads": 2055,
       "ratings": 1,
       "version": "2.0.0",
       "description": "Turns REPO into a live market run with swinging haul values, shifting shop prices, and an in-game market board.",
       "updated": "2026-05-16T20:44:21.265132Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_Market_Core/",
       "categories": [
-        "Mods",
         "Valuables",
         "Items",
         "Levels",
         "Client-side",
         "Server-side",
+        "Mods",
         "AI Generated"
       ]
     },
@@ -2453,17 +2454,17 @@
       "displayTeam": "Omniscye",
       "name": "Yap_Yap_Shop",
       "displayName": "Yap Yap Shop",
-      "downloads": 1995,
+      "downloads": 2001,
       "ratings": 2,
       "version": "1.0.0",
       "description": "The YapYap merchant has opened her hub as a shop. Press E to talk, buy anything in the game, then leave through the portal.",
       "updated": "2026-07-10T22:38:46.047541Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Yap_Yap_Shop/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
-        "Client-side",
-        "Server-side"
+        "Client-side"
       ]
     },
     {
@@ -2479,10 +2480,10 @@
       "updated": "2026-05-14T11:16:47.172411Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Outbound_Valuables/",
       "categories": [
-        "Mods",
         "Valuables",
-        "Client-side",
+        "Mods",
         "Server-side",
+        "Client-side",
         "AI Generated"
       ]
     },
@@ -2509,7 +2510,7 @@
       "displayTeam": "Omniscye",
       "name": "Empress_Replay_System",
       "displayName": "Empress Replay System",
-      "downloads": 1555,
+      "downloads": 1559,
       "ratings": 4,
       "version": "1.0.1",
       "description": "Record your matches and watch them back inside the game like a Halo Forge theater. This is not a screen recording. The actual level, your characters and the enemies get rebuilt and replayed so you can fly around and see what really happened.",
@@ -2527,7 +2528,7 @@
       "displayTeam": "Omniscye",
       "name": "Kingdom_Hearts_Menu",
       "displayName": "Kingdom Hearts Menu",
-      "downloads": 1539,
+      "downloads": 1545,
       "ratings": 3,
       "version": "1.0.0",
       "description": "Turns REPO's menus into Kingdom Hearts 2 style. Replaces all the vanilla menus with UI and sounds.",
@@ -2571,8 +2572,8 @@
       "updated": "2025-11-20T16:42:32.894239Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Empress_StartAtLevel/",
       "categories": [
-        "Mods",
-        "Server-side"
+        "Server-side",
+        "Mods"
       ]
     },
     {
@@ -2588,10 +2589,10 @@
       "updated": "2026-05-31T02:10:50.553326Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Voxel_Levels/",
       "categories": [
+        "Server-side",
         "Mods",
         "Levels",
         "Client-side",
-        "Server-side",
         "AI Generated"
       ]
     },
@@ -2601,7 +2602,7 @@
       "displayTeam": "Empress",
       "name": "You_Vs_AI",
       "displayName": "You Vs AI",
-      "downloads": 1138,
+      "downloads": 1139,
       "ratings": 1,
       "version": "1.0.1",
       "description": "Empress A.I. has escaped Omniscye's sandbox - She now watches how you play, builds frustration, and uses the level against you so you can try to survive her little god complex.",
@@ -2619,7 +2620,7 @@
       "displayTeam": "Empress",
       "name": "Lovebound_AI",
       "displayName": "Lovebound AI",
-      "downloads": 1122,
+      "downloads": 1124,
       "ratings": 1,
       "version": "1.0.0",
       "description": "Build an Empress/Your A.I. companion in singleplayer REPO, earn love, get blessings, and at 60% affection watch it manifest as a pink ghost helper that may save your run or judge every mistake personally.",
@@ -2656,7 +2657,7 @@
       "displayTeam": "Omniscye",
       "name": "Empress_REPOPenguins",
       "displayName": "Empress REPOPenguins",
-      "downloads": 712,
+      "downloads": 713,
       "ratings": 1,
       "version": "1.0.0",
       "description": "Penguins invade the R.E.P.O. main menu. Drag them, drop them and watch them waddle.",
@@ -2680,11 +2681,11 @@
       "updated": "2026-04-22T00:34:15.623791Z",
       "url": "https://thunderstore.io/c/repo/p/Omniscye/Legendary_Shuriken_Fix/",
       "categories": [
-        "Mods",
         "Items",
         "Weapons",
         "Client-side",
         "Server-side",
+        "Mods",
         "AI Generated"
       ]
     },

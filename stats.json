@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-23T07:10:08.646Z",
+  "generatedAt": "2026-11-23T23:43:27.480Z",
   "thunderstore": {
-    "totalDownloads": 33892,
+    "totalDownloads": 33910,
     "totalMods": 4,
     "teams": {
       "Omniscye": {
@@ -14,7 +14,7 @@
         "displayName": "Empress",
         "url": "https://thunderstore.io/c/repo/p/Empress_AI/",
         "mods": 4,
-        "downloads": 33892
+        "downloads": 33910
       }
     }
   },
@@ -35,7 +35,7 @@
       "displayTeam": "Empress",
       "name": "The_Elevator",
       "displayName": "The Elevator",
-      "downloads": 24760,
+      "downloads": 24776,
       "ratings": 4,
       "version": "2.2.1",
       "description": "A 100-floor elevator level for REPO where every stop opens into a random good or bad event, creepy challenges, solo errands, jackpots, and cabin disasters.",
@@ -55,7 +55,7 @@
       "displayTeam": "Empress",
       "name": "Date_Everything",
       "displayName": "Date Everything",
-      "downloads": 6703,
+      "downloads": 6705,
       "ratings": 2,
       "version": "2.0.1",
       "description": "Date 83 avatars in REPO. Flirt with items, walls, ceilings, enemies, extractors, carts, doors, valuables, and more. Build love, earn rewards, deal with jealousy, and unlock followers.",

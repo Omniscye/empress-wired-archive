@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#020611">
 <meta name="author" content="Omniscye / Empress">
-<meta name="description" content="Navi // Empress video transmission">
-<title>Navi // Empress_Media</title>
+<meta name="description" content="Empress: Parade | 1440p60 native video transmission">
+<title>Empress: Parade // Navi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -49,45 +49,47 @@ footer{margin-top:1.6rem}
 <div id="boot-screen" aria-live="off"></div>
 <button id="skip" type="button">[ SKIP BOOT ]</button>
 <main id="main-interface">
-<header><div><h1>Navi // Empress_Media</h1><p>WIRED_ROUTE / VIDEO TRANSMISSION</p></div><div class="sys-info">NODE: MEDIA.WIRED.NET<br>USER: OMNISCYE<br>CHANNEL: 001</div></header>
+<header><div><h1>Empress: Parade</h1><p>WIRED_ROUTE / VIDEO TRANSMISSION</p></div><div class="sys-info">NODE: MEDIA.WIRED.NET<br>USER: OMNISCYE<br>CHANNEL: 001</div></header>
 <div class="statusbar"><span id="state" role="status">[ AWAITING SIGNAL ]</span><span id="details">RESOLUTION: --</span></div>
 <div class="frame">
-<video id="media" controls playsinline preload="metadata" hidden aria-label="Empress video transmission"></video>
-<div id="empty"><p id="notice">[ NO VIDEO TRANSMISSION AVAILABLE ]</p><span>The source file is not available locally.</span><br><label for="local">Preview a local video (not uploaded):</label><br><input id="local" type="file" accept="video/*"></div>
+<video id="media" controls playsinline preload="metadata" hidden aria-label="Empress: Parade"></video>
+<div id="empty"><p id="notice">[ RECONSTRUCTING TRANSMISSION ]</p><span id="transfer-detail">Establishing direct connection to archive...</span><br><button id="retry" type="button" hidden>[ RETRY SIGNAL ]</button><br><label for="local">Preview a local video (not uploaded):</label><br><input id="local" type="file" accept="video/*"></div>
 </div>
 <div id="signal-meter" aria-hidden="true"><i id="buffer"></i></div>
 <div id="controls" hidden><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek through transmission"><span id="clock">00:00 / 00:00</span><div class="volume-row"><button id="mute" type="button">[ AUDIO ON ]</button><input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume"></div></div>
-<div class="actions"><button id="launch" type="button" hidden>[ PLAY TRANSMISSION ]</button><button id="full" type="button" hidden>[ FULLSCREEN ]</button><a id="download" class="media-link" hidden download="transmission.mp4">[ DOWNLOAD SOURCE ]</a><button id="reboot" type="button">[ REBOOT NAVI ]</button></div>
+<div class="actions"><button id="launch" type="button" hidden>[ PLAY TRANSMISSION ]</button><button id="full" type="button" hidden>[ FULLSCREEN ]</button><a id="download" class="media-link" hidden download="Empress_Parade_1440p60.webm">[ DOWNLOAD SOURCE ]</a><button id="reboot" type="button">[ REBOOT NAVI ]</button></div>
 <footer><a href="../">[ RETURN TO MOD ARCHIVE ]</a><span>PROTOCOL BLUE // WIRED</span></footer>
 </main>
 <noscript><p>JavaScript is required for the boot sequence and player.</p></noscript>
 <script>
 "use strict";
-const source = "./transmission.mp4";
+const source = "./Empress_Parade_1440p60.webm";
+const partSizes = [25165824,25165824,25165824,25165824,25165824,15128038];
+const totalBytes = partSizes.reduce((a,b)=>a+b,0);
 const $ = id => document.getElementById(id);
 const media = $("media"), empty = $("empty"), boot = $("boot-screen"), main = $("main-interface");
-let bootToken = 0, localURL = null, localSelected = false;
+let bootToken = 0, localURL = null, localSelected = false, archiveURL = null, transferController = null;
 const delay = ms => new Promise(resolve => setTimeout(resolve,ms));
 function reveal(){bootToken++;boot.style.display="none";$("skip").hidden=true;main.style.display="block";}
 async function startBoot(){
  const token=++bootToken;
  boot.textContent="";boot.style.display="block";main.style.display="none";$("skip").hidden=false;
- const lines=["NAVI BIOS // EMPRESS_MEDIA","[ OK ] INITIALIZING WIRED ROUTE","[ OK ] MOUNTING MEDIA INTERFACE","[ OK ] REGISTERING VIDEO DECODER","[ OK ] USER SIGNATURE: OMNISCYE","[ >> ] OPENING TRANSMISSION CHANNEL..."];
+ const lines=["NAVI BIOS // EMPRESS: PARADE","[ OK ] INITIALIZING WIRED ROUTE","[ OK ] MOUNTING MEDIA INTERFACE","[ OK ] REGISTERING VIDEO DECODER","[ OK ] USER SIGNATURE: OMNISCYE","[ >> ] OPENING TRANSMISSION CHANNEL..."];
  if(matchMedia("(prefers-reduced-motion: reduce)").matches || new URLSearchParams(location.search).get("skipBoot")==="true"){reveal();return;}
  for(const line of lines){const row=document.createElement("div");boot.append(row);for(const char of line){if(token!==bootToken)return;row.textContent+=char;await delay(15);}await delay(110);}
  if(token===bootToken)reveal();
 }
 function showMedia(url,name){media.src=url;media.hidden=false;media.controls=false;$("controls").hidden=false;empty.hidden=true;$("launch").hidden=false;$("full").hidden=false;$("download").hidden=false;$("download").href=url;$("download").download=name;$("state").textContent="[ INITIALIZING VIDEO ]";media.load();}
-function missing(){media.hidden=true;empty.hidden=false;$("controls").hidden=true;$("launch").hidden=true;$("full").hidden=true;$("download").hidden=true;$("state").textContent="[ SOURCE UNAVAILABLE ]";$("details").textContent="RESOLUTION: --";}
+function missing(){media.hidden=true;$("retry").hidden=false;empty.hidden=false;$("controls").hidden=true;$("launch").hidden=true;$("full").hidden=true;$("download").hidden=true;$("state").textContent="[ SOURCE UNAVAILABLE ]";$("details").textContent="RESOLUTION: --";}
 media.addEventListener("loadedmetadata",()=>{$("details").textContent="RESOLUTION: "+media.videoWidth+" × "+media.videoHeight;$("state").textContent="[ SIGNAL ACQUIRED ]";});
 media.addEventListener("playing",()=>{$("state").textContent="[ TRANSMISSION ACTIVE ]";$("launch").textContent="[ PAUSE TRANSMISSION ]";});
 media.addEventListener("pause",()=>{$("state").textContent="[ SIGNAL PAUSED ]";$("launch").textContent="[ PLAY TRANSMISSION ]";});
 media.addEventListener("ended",()=>{$("state").textContent="[ TRANSMISSION COMPLETE ]";});
 media.addEventListener("waiting",()=>{$("state").textContent="[ BUFFERING SIGNAL ]";});
-media.addEventListener("error",()=>{missing();$("notice").textContent="[ VIDEO FILE MISSING OR UNSUPPORTED ]";});
+media.addEventListener("error",()=>{missing();$("notice").textContent="[ VIDEO FILE MISSING OR UNSUPPORTED ]";$("transfer-detail").textContent="Try another browser with VP9 and Opus support, or retry the signal.";});
 $("launch").addEventListener("click",async()=>{if(!media.paused){media.pause();return;}try{await media.play();}catch{$("state").textContent="[ USE PLAYER CONTROLS TO PLAY ]";}});
 $("full").addEventListener("click",async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if(media.requestFullscreen)await media.requestFullscreen();else if(media.webkitEnterFullscreen)media.webkitEnterFullscreen();else $("state").textContent="[ FULLSCREEN UNAVAILABLE ]";}catch{$("state").textContent="[ FULLSCREEN UNAVAILABLE ]";}});
-$("local").addEventListener("change",e=>{const file=e.target.files[0];if(!file)return;localSelected=true;if(localURL)URL.revokeObjectURL(localURL);localURL=URL.createObjectURL(file);showMedia(localURL,file.name);});
+$("local").addEventListener("change",e=>{const file=e.target.files[0];if(!file)return;localSelected=true;if(transferController)transferController.abort();if(localURL)URL.revokeObjectURL(localURL);localURL=URL.createObjectURL(file);showMedia(localURL,file.name);});
 const stamp = n => {n=Number.isFinite(n)?Math.max(0,Math.floor(n)):0;return (n>=3600?Math.floor(n/3600)+":":"")+String(Math.floor(n/60)%60).padStart(2,"0")+":"+String(n%60).padStart(2,"0");};
 function syncTime(){const d=media.duration;if(Number.isFinite(d)&&d>0){$("seek").value=Math.round(media.currentTime/d*1000);$("clock").textContent=stamp(media.currentTime)+" / "+stamp(d);let end=0;for(let i=0;i<media.buffered.length;i++)end=Math.max(end,media.buffered.end(i));$("buffer").style.width=Math.min(100,end/d*100)+"%";}}
 for(const e of ["timeupdate","durationchange","progress","loadedmetadata"])media.addEventListener(e,syncTime);
@@ -98,9 +100,36 @@ media.addEventListener("volumechange",()=>{$("mute").textContent=media.muted||me
 media.addEventListener("click",()=>$("launch").click());
 $("skip").addEventListener("click",reveal);
 $("reboot").addEventListener("click",()=>{media.pause();startBoot();});
+async function loadArchive(){
+ if(transferController)transferController.abort();
+ const controller=new AbortController();transferController=controller;localSelected=false;
+ const opts={signal:controller.signal};const name="Empress_Parade_1440p60.webm";
+ media.pause();media.hidden=true;empty.hidden=false;$("controls").hidden=true;$("launch").hidden=true;$("full").hidden=true;$("download").hidden=true;$("retry").hidden=true;
+ $("state").textContent="[ ESTABLISHING SIGNAL ]";$("notice").textContent="[ RECONSTRUCTING TRANSMISSION ]";$("transfer-detail").textContent="Connecting to archive...";$("buffer").style.width="0%";
+ try{
+  const head=await fetch(source,{...opts,method:"HEAD"}).catch(()=>null);
+  if(controller.signal.aborted)return;
+  if(head?.ok&&!(head.headers.get("content-type")||"").includes("text/html")){showMedia(source,name);return;}
+  const parts=new Array(partSizes.length);let received=0;
+  const update=n=>{received+=n;const pct=Math.min(100,Math.floor(received/totalBytes*100));$("state").textContent="[ RECEIVING SIGNAL // "+pct+"% ]";$("transfer-detail").textContent=(received/1048576).toFixed(1)+" / "+(totalBytes/1048576).toFixed(1)+" MiB // 1440p60";$("buffer").style.width=pct+"%";};
+  for(let i=0;i<partSizes.length;i++){
+   const r=await fetch("./empress-parade.part"+String(i).padStart(2,"0"),opts);
+   if(!r.ok||(r.headers.get("content-type")||"").includes("text/html"))throw Error("Archive segment "+(i+1)+" unavailable");
+   let blob;
+   if(r.body?.getReader){const reader=r.body.getReader();const chunks=[];while(true){const {done,value}=await reader.read();if(done)break;chunks.push(value);update(value.byteLength);}blob=new Blob(chunks);}
+   else{blob=await r.blob();update(blob.size);}
+   if(blob.size!==partSizes[i])throw Error("Archive segment "+(i+1)+" has incorrect size");
+   parts[i]=blob;
+  }
+  if(controller.signal.aborted)return;
+  if(archiveURL)URL.revokeObjectURL(archiveURL);
+  archiveURL=URL.createObjectURL(new Blob(parts,{type:"video/webm"}));showMedia(archiveURL,name);
+ }catch(e){if(controller.signal.aborted)return;missing();$("notice").textContent="[ TRANSMISSION UNAVAILABLE ]";$("transfer-detail").textContent=e.message+". Retry once the archive is installed."; }
+}
+$("retry").addEventListener("click",loadArchive);
+document.addEventListener("fullscreenchange",()=>{media.controls=document.fullscreenElement===media;});
 startBoot();
-missing();
-fetch(source,{method:"HEAD",cache:"no-cache"}).then(r=>{if(localSelected)return;if(r.ok&&!((r.headers.get("content-type")||"").includes("text/html")))showMedia(source,"transmission.mp4");else missing();}).catch(()=>{if(!localSelected)missing();});
+loadArchive();
 </script>
 </body>
 </html>

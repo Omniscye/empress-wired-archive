@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-24T09:34:09.733Z",
+  "generatedAt": "2026-11-24T22:15:24.099Z",
   "thunderstore": {
-    "totalDownloads": 33919,
+    "totalDownloads": 33938,
     "totalMods": 4,
     "teams": {
       "Omniscye": {
@@ -14,7 +14,7 @@
         "displayName": "Empress",
         "url": "https://thunderstore.io/c/repo/p/Empress_AI/",
         "mods": 4,
-        "downloads": 33919
+        "downloads": 33938
       }
     }
   },
@@ -35,7 +35,7 @@
       "displayTeam": "Empress",
       "name": "The_Elevator",
       "displayName": "The Elevator",
-      "downloads": 24781,
+      "downloads": 24796,
       "ratings": 4,
       "version": "2.2.1",
       "description": "A 100-floor elevator level for REPO where every stop opens into a random good or bad event, creepy challenges, solo errands, jackpots, and cabin disasters.",
@@ -55,7 +55,7 @@
       "displayTeam": "Empress",
       "name": "Date_Everything",
       "displayName": "Date Everything",
-      "downloads": 6709,
+      "downloads": 6710,
       "ratings": 2,
       "version": "2.0.1",
       "description": "Date 83 avatars in REPO. Flirt with items, walls, ceilings, enemies, extractors, carts, doors, valuables, and more. Build love, earn rewards, deal with jealousy, and unlock followers.",
@@ -76,7 +76,7 @@
       "displayTeam": "Empress",
       "name": "You_Vs_AI",
       "displayName": "You Vs AI",
-      "downloads": 1227,
+      "downloads": 1229,
       "ratings": 1,
       "version": "1.0.1",
       "description": "Empress A.I. has escaped Omniscye's sandbox - She now watches how you play, builds frustration, and uses the level against you so you can try to survive her little god complex.",
@@ -94,7 +94,7 @@
       "displayTeam": "Empress",
       "name": "Lovebound_AI",
       "displayName": "Lovebound AI",
-      "downloads": 1202,
+      "downloads": 1203,
       "ratings": 1,
       "version": "1.0.0",
       "description": "Build an Empress/Your A.I. companion in singleplayer REPO, earn love, get blessings, and at 60% affection watch it manifest as a pink ghost helper that may save your run or judge every mistake personally.",

@@ -24,7 +24,7 @@ button:hover,.media-link:hover{background:var(--text-color);color:var(--bg-color
 button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--alert-color);outline-offset:4px}
 .frame{position:relative;background:#000;border:1px solid var(--dim-text);box-shadow:0 0 24px #91c5ff22;display:grid;place-items:center;min-height:180px}
 video{width:100%;max-height:72dvh;display:block;background:#000;object-fit:contain}
-iframe{display:block;width:100%;aspect-ratio:16/9;border:0;max-height:72dvh;background:#000} video[hidden], [hidden]{display:none!important}
+video[hidden], [hidden]{display:none!important}
 #empty{padding:35px 20px;text-align:center;line-height:1.8}
 #empty p{color:var(--alert-color)}
 #empty label{display:inline-block;margin-top:18px}
@@ -33,6 +33,15 @@ iframe{display:block;width:100%;aspect-ratio:16/9;border:0;max-height:72dvh;back
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
 footer{margin-top:1.6rem}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+#controls{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:14px;padding:12px;border:1px solid var(--dim-text);background:#050d1b}
+#seek,#volume{accent-color:var(--text-color);width:100%;min-width:0;cursor:pointer}
+#clock{font-variant-numeric:tabular-nums;font-size:.85rem}
+.volume-row{display:flex;align-items:center;gap:10px;grid-column:1/-1}
+#volume{max-width:140px}
+#signal-meter{height:3px;background:#12233a;margin-top:10px;overflow:hidden}
+#signal-meter i{display:block;width:0;height:100%;background:var(--text-color);box-shadow:var(--glow)}
+#media{cursor:pointer}
 </style>
 </head>
 <body>
@@ -44,17 +53,17 @@ footer{margin-top:1.6rem}
 <div class="statusbar"><span id="state" role="status">[ AWAITING SIGNAL ]</span><span id="details">RESOLUTION: --</span></div>
 <div class="frame">
 <video id="media" controls playsinline preload="metadata" hidden aria-label="Empress video transmission"></video>
-<iframe id="youtube" title="Empress video transmission on YouTube" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen hidden></iframe>
 <div id="empty"><p id="notice">[ NO VIDEO TRANSMISSION AVAILABLE ]</p><span>The source file is not available locally.</span><br><label for="local">Preview a local video (not uploaded):</label><br><input id="local" type="file" accept="video/*"></div>
 </div>
-<div class="actions"><button id="launch" type="button" hidden>[ PLAY TRANSMISSION ]</button><button id="full" type="button" hidden>[ FULLSCREEN ]</button><a id="download" class="media-link" hidden download="transmission.mp4">[ DOWNLOAD SOURCE ]</a><a class="media-link" href="https://youtu.be/22JvYNCrfHg" target="_blank" rel="noopener noreferrer">[ OPEN ON YOUTUBE ]</a><button id="reboot" type="button">[ REBOOT NAVI ]</button></div>
+<div id="signal-meter" aria-hidden="true"><i id="buffer"></i></div>
+<div id="controls" hidden><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek through transmission"><span id="clock">00:00 / 00:00</span><div class="volume-row"><button id="mute" type="button">[ AUDIO ON ]</button><input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume"></div></div>
+<div class="actions"><button id="launch" type="button" hidden>[ PLAY TRANSMISSION ]</button><button id="full" type="button" hidden>[ FULLSCREEN ]</button><a id="download" class="media-link" hidden download="transmission.mp4">[ DOWNLOAD SOURCE ]</a><button id="reboot" type="button">[ REBOOT NAVI ]</button></div>
 <footer><a href="../">[ RETURN TO MOD ARCHIVE ]</a><span>PROTOCOL BLUE // WIRED</span></footer>
 </main>
 <noscript><p>JavaScript is required for the boot sequence and player.</p></noscript>
 <script>
 "use strict";
 const source = "./transmission.mp4";
-const embed = "https://www.youtube-nocookie.com/embed/22JvYNCrfHg?playsinline=1&rel=0";
 const $ = id => document.getElementById(id);
 const media = $("media"), empty = $("empty"), boot = $("boot-screen"), main = $("main-interface");
 let bootToken = 0, localURL = null, localSelected = false;
@@ -68,19 +77,27 @@ async function startBoot(){
  for(const line of lines){const row=document.createElement("div");boot.append(row);for(const char of line){if(token!==bootToken)return;row.textContent+=char;await delay(15);}await delay(110);}
  if(token===bootToken)reveal();
 }
-function showMedia(url,name){$("youtube").hidden=true;$("youtube").removeAttribute("src");media.src=url;media.hidden=false;empty.hidden=true;$("launch").hidden=false;$("full").hidden=false;$("download").hidden=false;$("download").href=url;$("download").download=name;$("state").textContent="[ INITIALIZING VIDEO ]";media.load();}
-function missing(){media.hidden=true;empty.hidden=true;$("launch").hidden=true;$("full").hidden=true;$("download").hidden=true;const yt=$("youtube");yt.hidden=false;if(!yt.getAttribute("src"))yt.src=embed;$("state").textContent="[ YOUTUBE TRANSMISSION ]";$("details").textContent="QUALITY: AUTO / PLAYER SETTINGS";}
+function showMedia(url,name){media.src=url;media.hidden=false;media.controls=false;$("controls").hidden=false;empty.hidden=true;$("launch").hidden=false;$("full").hidden=false;$("download").hidden=false;$("download").href=url;$("download").download=name;$("state").textContent="[ INITIALIZING VIDEO ]";media.load();}
+function missing(){media.hidden=true;empty.hidden=false;$("controls").hidden=true;$("launch").hidden=true;$("full").hidden=true;$("download").hidden=true;$("state").textContent="[ SOURCE UNAVAILABLE ]";$("details").textContent="RESOLUTION: --";}
 media.addEventListener("loadedmetadata",()=>{$("details").textContent="RESOLUTION: "+media.videoWidth+" × "+media.videoHeight;$("state").textContent="[ SIGNAL ACQUIRED ]";});
 media.addEventListener("playing",()=>{$("state").textContent="[ TRANSMISSION ACTIVE ]";$("launch").textContent="[ PAUSE TRANSMISSION ]";});
 media.addEventListener("pause",()=>{$("state").textContent="[ SIGNAL PAUSED ]";$("launch").textContent="[ PLAY TRANSMISSION ]";});
 media.addEventListener("ended",()=>{$("state").textContent="[ TRANSMISSION COMPLETE ]";});
 media.addEventListener("waiting",()=>{$("state").textContent="[ BUFFERING SIGNAL ]";});
-media.addEventListener("error",()=>{missing();});
+media.addEventListener("error",()=>{missing();$("notice").textContent="[ VIDEO FILE MISSING OR UNSUPPORTED ]";});
 $("launch").addEventListener("click",async()=>{if(!media.paused){media.pause();return;}try{await media.play();}catch{$("state").textContent="[ USE PLAYER CONTROLS TO PLAY ]";}});
-$("full").addEventListener("click",async()=>{try{if(media.requestFullscreen)await media.requestFullscreen();else if(media.webkitEnterFullscreen)media.webkitEnterFullscreen();}catch{$("state").textContent="[ FULLSCREEN UNAVAILABLE ]";}});
+$("full").addEventListener("click",async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else if(media.requestFullscreen)await media.requestFullscreen();else if(media.webkitEnterFullscreen)media.webkitEnterFullscreen();else $("state").textContent="[ FULLSCREEN UNAVAILABLE ]";}catch{$("state").textContent="[ FULLSCREEN UNAVAILABLE ]";}});
 $("local").addEventListener("change",e=>{const file=e.target.files[0];if(!file)return;localSelected=true;if(localURL)URL.revokeObjectURL(localURL);localURL=URL.createObjectURL(file);showMedia(localURL,file.name);});
+const stamp = n => {n=Number.isFinite(n)?Math.max(0,Math.floor(n)):0;return (n>=3600?Math.floor(n/3600)+":":"")+String(Math.floor(n/60)%60).padStart(2,"0")+":"+String(n%60).padStart(2,"0");};
+function syncTime(){const d=media.duration;if(Number.isFinite(d)&&d>0){$("seek").value=Math.round(media.currentTime/d*1000);$("clock").textContent=stamp(media.currentTime)+" / "+stamp(d);let end=0;for(let i=0;i<media.buffered.length;i++)end=Math.max(end,media.buffered.end(i));$("buffer").style.width=Math.min(100,end/d*100)+"%";}}
+for(const e of ["timeupdate","durationchange","progress","loadedmetadata"])media.addEventListener(e,syncTime);
+$("seek").addEventListener("input",()=>{if(Number.isFinite(media.duration))media.currentTime=media.duration*Number($("seek").value)/1000;});
+$("volume").addEventListener("input",()=>{media.volume=Number($("volume").value);media.muted=false;});
+$("mute").addEventListener("click",()=>{media.muted=!media.muted;});
+media.addEventListener("volumechange",()=>{$("mute").textContent=media.muted||media.volume===0?"[ AUDIO OFF ]":"[ AUDIO ON ]";$("volume").value=media.muted?0:media.volume;});
+media.addEventListener("click",()=>$("launch").click());
 $("skip").addEventListener("click",reveal);
-$("reboot").addEventListener("click",()=>{media.pause();const yt=$("youtube");if(!yt.hidden){yt.removeAttribute("src");yt.src=embed;}startBoot();});
+$("reboot").addEventListener("click",()=>{media.pause();startBoot();});
 startBoot();
 missing();
 fetch(source,{method:"HEAD",cache:"no-cache"}).then(r=>{if(localSelected)return;if(r.ok&&!((r.headers.get("content-type")||"").includes("text/html")))showMedia(source,"transmission.mp4");else missing();}).catch(()=>{if(!localSelected)missing();});

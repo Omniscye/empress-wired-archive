@@ -17,7 +17,6 @@ body{padding:20px;min-height:100dvh;display:grid;place-items:center}
 header{margin-bottom:1.2rem}
 h1{overflow-wrap:anywhere}
 #boot-screen{top:clamp(18px,5vw,48px);left:clamp(18px,5vw,48px);font-size:clamp(13px,2.5vw,20px)}
-#skip{position:fixed;bottom:24px;right:24px;z-index:51}
 button,.media-link{font:inherit;color:var(--text-color);background:#071323;border:1px solid var(--dim-text);padding:10px 14px;cursor:pointer;display:inline-block}
 button:hover,.media-link:hover{background:var(--text-color);color:var(--bg-color)}
 button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--alert-color);outline-offset:4px}
@@ -64,21 +63,36 @@ video{height:100%;width:100%;max-height:none;object-fit:contain}
 .actions button,.media-link{min-height:42px;font-size:11px}
 #launch{background:#8dbfff;color:#071323}
 #boot-screen{position:fixed;inset:0;max-width:none;background:#03060c;padding:clamp(28px,8vw,100px);font-size:clamp(12px,2vw,17px);line-height:1.8;z-index:50;overflow:auto}
-#boot-screen:before{content:"EMPRESS // NAVI SYSTEMS";display:block;color:#e2efff;font-size:clamp(22px,5vw,54px);letter-spacing:-.04em;margin-bottom:26px}
-#boot-screen:after{content:" ▋";animation:empressCursor 1s steps(2) infinite}
-@keyframes empressCursor{50%{opacity:0}}
+
 body.empressCinema #main-interface{max-width:min(100%,calc((100dvh - 105px)*1.7778));padding:8px;margin:0;border:0;box-shadow:none}
 body.empressCinema header,body.empressCinema footer,body.empressCinema .statusbar{display:none}
 body.empressCinema .actions{margin-top:8px}
 footer{font-size:10px;letter-spacing:.06em}
 @media(max-width:600px){body{padding:12px}header{margin-bottom:10px;padding-bottom:14px}.frame{min-height:175px}.actions{gap:6px}.actions button,.media-link{padding:8px;font-size:10px}#empressBlocks{margin:6px auto}#empty p{margin:3px 0}#empty{line-height:1.4}#main-interface{margin:0}.statusbar{font-size:10px}.volume-row{flex-wrap:wrap}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+#boot-screen{display:grid;place-items:center;padding:clamp(14px,5vw,56px);background:radial-gradient(ellipse at 50% 25%,#152945 0%,#060b15 55%,#020408 100%);isolation:isolate}
+#boot-screen:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,#91c5ff09 4px 5px);pointer-events:none;z-index:-1}
+.empressOS{width:min(100%,620px);margin:auto}
+.empressInsignia{width:clamp(80px,18vw,132px);display:block;margin:0 auto 18px;color:#a1caff;filter:drop-shadow(0 0 18px #7cbaff66)}
+.empressOSName{text-align:center;font-size:clamp(28px,8vw,64px);line-height:1.1;letter-spacing:-.07em;color:#edf5ff;font-weight:700}
+.empressOSName span{color:#80b7ff}
+.empressOSVersion{text-align:center;letter-spacing:.24em;font-size:10px;color:#8aa7ca;margin-top:10px}
+#empressPower{display:block;margin:28px auto 12px;padding:16px 26px;background:#a1caff;color:#060b15;font-weight:700;letter-spacing:.14em;box-shadow:0 0 28px #7bb4ff40}
+#empressPowerHint{text-align:center;color:#8aa7ca;font-size:10px;letter-spacing:.08em}
+#empressLog{font-size:clamp(10px,2.6vw,14px);min-height:0;margin:26px 0 16px;border-left:1px solid #44638a;padding-left:13px;line-height:1.65;color:#a1caff;overflow-wrap:anywhere}
+#empressLog div[data-warn="true"]{color:#ffc5a3}
+#empressLog div:last-child:after{content:" ▋";animation:empressCursor .85s steps(2) infinite}
+@keyframes empressCursor{50%{opacity:0}}
+#empressBootBar{height:4px;border:1px solid #44638a;background:#080e19;overflow:hidden;margin-top:12px}
+#empressBootBar i{display:block;width:0%;height:100%;background:#a1caff;box-shadow:0 0 15px #8dbfff;transition:width .16s linear}
+#empressBootStatus{display:flex;justify-content:space-between;margin-top:9px;color:#8aa7ca;font-size:10px;letter-spacing:.1em}
+@media(max-height:520px){.empressInsignia{width:64px;margin-bottom:5px}.empressOSName{font-size:28px}#empressLog{margin:12px 0 8px;font-size:10px;line-height:1.35}#empressPower{margin-top:14px}}
 </style>
 </head>
 <body>
 <div class="bg-image"></div><div class="scanlines"></div><div class="vignette"></div>
-<div id="boot-screen" aria-live="off"></div>
-<button id="skip" type="button">[ SKIP BOOT ]</button>
+<div id="boot-screen"><section class="empressOS" aria-label="Empress OS startup"><svg class="empressInsignia" viewBox="0 0 120 90" aria-hidden="true"><path d="M12 22 35 43 60 10 85 43 108 22 96 70H24Z" fill="currentColor" opacity=".12"/><path d="M12 22 35 43 60 10 85 43 108 22 96 70H24Z M24 79H96" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="miter"/><g fill="currentColor"><circle cx="12" cy="22" r="4"/><circle cx="60" cy="10" r="4"/><circle cx="108" cy="22" r="4"/><path d="m60 43 9 9-9 9-9-9z"/></g></svg><div class="empressOSName">EMPRESS<span> OS</span></div><p class="empressOSVersion">CROWN EDITION / 6.66</p><button id="empressPower" type="button">[ POWER ON ]</button><p id="empressPowerHint">SOUND ENABLED ON STARTUP</p><div id="empressLog" hidden aria-live="polite"></div><div id="empressBootBar" hidden><i></i></div><div id="empressBootStatus" hidden><span>THRONE INITIALIZATION</span><span id="empressBootPercent">00%</span></div></section></div>
 <main id="main-interface">
 <header><div><p class="eyebrow">OMNISCYE PRESENTS / TRANSMISSION 001</p><h1>Empress<span>:</span><br>Parade</h1><p class="subline">THE WIRED // AUDIOVISUAL TRANSMISSION</p></div><div class="sys-info">2560 × 1440 / 60 FPS<br>VP9 + OPUS / WEBM<br>02:16 / ORIGINAL SIGNAL</div></header>
 <div class="statusbar"><span id="state" role="status">[ AWAITING SIGNAL ]</span><span id="details">RESOLUTION: --</span></div>
@@ -88,7 +102,7 @@ footer{font-size:10px;letter-spacing:.06em}
 </div>
 <div id="signal-meter" aria-hidden="true"><i id="buffer"></i></div>
 <div id="controls" hidden><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek through transmission"><span id="clock">00:00 / 00:00</span><div class="volume-row"><button id="mute" type="button">[ AUDIO ON ]</button><input id="volume" type="range" min="0" max="1" step="0.01" value="1" aria-label="Volume"></div></div>
-<div class="actions"><button id="launch" type="button" hidden>[ PLAY TRANSMISSION ]</button><button id="full" type="button" hidden>[ FULLSCREEN ]</button><a id="download" class="media-link" hidden download="Empress_Parade_1440p60.webm">[ DOWNLOAD SOURCE ]</a><button id="empressCinema" type="button" hidden>[ CINEMA ]</button><button id="reboot" type="button">[ REBOOT NAVI ]</button></div>
+<div class="actions"><button id="launch" type="button" hidden>[ PLAY TRANSMISSION ]</button><button id="full" type="button" hidden>[ FULLSCREEN ]</button><a id="download" class="media-link" hidden download="Empress_Parade_1440p60.webm">[ DOWNLOAD SOURCE ]</a><button id="empressCinema" type="button" hidden>[ CINEMA ]</button><button id="reboot" type="button">[ REBOOT OS ]</button></div>
 <footer><span>© OMNISCYE // EMPRESS / DIRECT HOST</span><span>TRANSMISSION 001</span></footer>
 </main>
 <noscript><p>JavaScript is required for the boot sequence and player.</p></noscript>
@@ -101,14 +115,40 @@ const $ = id => document.getElementById(id);
 const media = $("media"), empty = $("empty"), boot = $("boot-screen"), main = $("main-interface");
 let bootToken = 0, archiveURL = null, transferController = null, empressStreaming = false, empressFallback = false;
 const delay = ms => new Promise(resolve => setTimeout(resolve,ms));
-function reveal(){bootToken++;boot.style.display="none";$("skip").hidden=true;main.style.display="block";}
+let empressAudio=null;
+const empressROM=["25342931284634292b464946232b36342335354629354650485050","3d46292d463b46322e34292823462d233428232a4629282a2f2823","3d46292d463b4634293f272a46352f21282732333423462725252336322322","3d46292d463b462b293328322f282146322e2346242a27252d462734252e2f3023","3d46292d463b463627342728292f27462b2922332a2346232827242a2322","3d4631273428463b462b2334253f48222a2a46282932462029332822","3d46292d463b462827322f302346273046252e272828232a4629282a2f2823","3d465858463b46322e2346362734272223462731272f323548"];
+function empressDecode(hex){return (hex.match(/../g)||[]).map(v=>String.fromCharCode(parseInt(v,16)^0x66)).join("");}
+function empressWakeAudio(){
+ try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;empressAudio??=new C();if(empressAudio.state==="suspended")empressAudio.resume().catch(()=>{});}catch{}
+}
+function empressTone(freq,duration,volume,type="sine",offset=0,end=freq){
+ const ctx=empressAudio;if(!ctx||ctx.state!=="running")return;
+ const t=ctx.currentTime+offset,o=ctx.createOscillator(),g=ctx.createGain();
+ o.type=type;o.frequency.setValueAtTime(freq,t);o.frequency.exponentialRampToValueAtTime(Math.max(1,end),t+duration);
+ g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(volume,t+.015);g.gain.exponentialRampToValueAtTime(.0001,t+duration);
+ o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+duration+.02);
+}
+function empressChime(i){
+ if(i===0){empressTone(58,.55,.10,"triangle",0,95);empressTone(110,.32,.035,"sine",.08,165);}
+ else if(i===5){empressTone(166,.16,.04,"triangle");empressTone(124,.22,.045,"triangle",.18);}
+ else if(i===7){[146.83,220,293.66,349.23].forEach((f,n)=>empressTone(f,.65,.035,"sine",n*.075));empressTone(73.42,.8,.05,"triangle",.1);}
+ else{empressTone(440+i*65,.09,.04,"triangle");empressTone(880+i*50,.06,.018,"sine",.045);}
+}
+function empressReveal(){boot.style.display="none";main.style.display="block";}
 async function empressBoot(){
  const token=++bootToken;
- boot.textContent="";boot.style.display="block";main.style.display="none";$("skip").hidden=false;
- const lines=["NAVI BIOS / EMPRESS: PARADE","[ OK ] INITIALIZING WIRED ROUTE","[ OK ] MOUNTING MEDIA INTERFACE","[ OK ] REGISTERING NATIVE VIDEO DECODER","[ OK ] USER SIGNATURE: OMNISCYE","[ >> ] OPENING PARADE TRANSMISSION..."];
- if(matchMedia("(prefers-reduced-motion: reduce)").matches || new URLSearchParams(location.search).get("skipBoot")==="true"){reveal();return;}
- for(const line of lines){if(token!==bootToken)return;const row=document.createElement("div");row.textContent=line;boot.append(row);await delay(130);}
- if(token===bootToken)reveal();
+ empressWakeAudio();media.pause();boot.style.display="grid";main.style.display="none";
+ $("empressPower").hidden=true;$("empressPowerHint").hidden=true;
+ const log=$("empressLog"),bar=$("empressBootBar"),status=$("empressBootStatus");
+ log.hidden=false;log.replaceChildren();bar.hidden=false;status.hidden=false;
+ bar.firstElementChild.style.width="0%";$("empressBootPercent").textContent="00%";
+ for(let i=0;i<empressROM.length;i++){
+  if(token!==bootToken)return;
+  const row=document.createElement("div");row.textContent=empressDecode(empressROM[i]);if(i===5)row.dataset.warn="true";log.append(row);empressChime(i);
+  const pct=Math.round((i+1)/empressROM.length*100);bar.firstElementChild.style.width=pct+"%";$("empressBootPercent").textContent=String(pct).padStart(2,"0")+"%";
+  await delay(i===0?480:i===7?850:280);
+ }
+ if(token===bootToken)empressReveal();
 }
 function empressMount(url,name){media.preload="auto";media.src=url;media.hidden=false;$("empressCinema").hidden=false;media.controls=false;$("controls").hidden=false;empty.hidden=true;$("launch").hidden=false;$("full").hidden=false;$("download").hidden=false;$("download").href=url;$("download").download=name;$("state").textContent="[ INITIALIZING VIDEO ]";media.load();}
 function empressUnavailable(){media.hidden=true;$("empressGate").hidden=true;$("empressCinema").hidden=true;$("retry").hidden=false;empty.hidden=false;$("controls").hidden=true;$("launch").hidden=true;$("full").hidden=true;$("download").hidden=true;$("state").textContent="[ SOURCE UNAVAILABLE ]";$("details").textContent="RESOLUTION: --";}
@@ -131,7 +171,7 @@ media.addEventListener("click",()=>$("launch").click());
 $("empressStart").addEventListener("click",()=>$("launch").click());
 $("empressCinema").addEventListener("click",()=>{const active=document.body.classList.toggle("empressCinema");$("empressCinema").textContent=active?"[ EXIT CINEMA ]":"[ CINEMA ]";});
 document.addEventListener("keydown",e=>{if(e.ctrlKey||e.metaKey||e.altKey||["INPUT","BUTTON","A"].includes(e.target.tagName)||media.hidden)return;if(e.code==="Space"){e.preventDefault();$("launch").click();}else if(e.key.toLowerCase()==="f")$("full").click();else if(e.key.toLowerCase()==="m")$("mute").click();else if(e.key==="ArrowLeft"||e.key==="ArrowRight"){e.preventDefault();if(Number.isFinite(media.duration))media.currentTime=Math.max(0,Math.min(media.duration,media.currentTime+(e.key==="ArrowLeft"?-5:5)));}});
-$("skip").addEventListener("click",reveal);
+$("empressPower").addEventListener("click",empressBoot,{once:true});
 $("reboot").addEventListener("click",()=>{media.pause();empressBoot();});
 async function empressAcquire(){
  if(transferController)transferController.abort();
@@ -186,7 +226,6 @@ async function empressConnect(){
 }
 $("retry").addEventListener("click",empressConnect);
 document.addEventListener("fullscreenchange",()=>{media.controls=document.fullscreenElement===media;});
-empressBoot();
 empressConnect();
 </script>
 </body>

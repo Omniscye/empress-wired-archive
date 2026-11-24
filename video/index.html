@@ -118,8 +118,8 @@ const delay = ms => new Promise(resolve => setTimeout(resolve,ms));
 let empressAudio=null;
 const empressROM=["25342931284634292b464946232b36342335354629354650485050","3d46292d463b46322e34292823462d233428232a4629282a2f2823","3d46292d463b4634293f272a46352f21282732333423462725252336322322","3d46292d463b462b293328322f282146322e2346242a27252d462734252e2f3023","3d46292d463b463627342728292f27462b2922332a2346232827242a2322","3d4631273428463b462b2334253f48222a2a46282932462029332822","3d46292d463b462827322f302346273046252e272828232a4629282a2f2823","3d465858463b46322e2346362734272223462731272f323548"];
 function empressDecode(hex){return (hex.match(/../g)||[]).map(v=>String.fromCharCode(parseInt(v,16)^0x66)).join("");}
-function empressWakeAudio(){
- try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;empressAudio??=new C();if(empressAudio.state==="suspended")empressAudio.resume().catch(()=>{});}catch{}
+async function empressWakeAudio(){
+ try{const C=window.AudioContext||window.webkitAudioContext;if(!C)return;empressAudio??=new C();if(empressAudio.state==="suspended")await Promise.race([empressAudio.resume(),delay(250)]);}catch{}
 }
 function empressTone(freq,duration,volume,type="sine",offset=0,end=freq){
  const ctx=empressAudio;if(!ctx||ctx.state!=="running")return;
@@ -137,11 +137,11 @@ function empressChime(i){
 function empressReveal(){boot.style.display="none";main.style.display="block";}
 async function empressBoot(){
  const token=++bootToken;
- empressWakeAudio();media.pause();boot.style.display="grid";main.style.display="none";
+ const audioReady=empressWakeAudio();media.pause();boot.style.display="grid";main.style.display="none";
  $("empressPower").hidden=true;$("empressPowerHint").hidden=true;
  const log=$("empressLog"),bar=$("empressBootBar"),status=$("empressBootStatus");
  log.hidden=false;log.replaceChildren();bar.hidden=false;status.hidden=false;
- bar.firstElementChild.style.width="0%";$("empressBootPercent").textContent="00%";
+ bar.firstElementChild.style.width="0%";$("empressBootPercent").textContent="00%";await audioReady;
  for(let i=0;i<empressROM.length;i++){
   if(token!==bootToken)return;
   const row=document.createElement("div");row.textContent=empressDecode(empressROM[i]);if(i===5)row.dataset.warn="true";log.append(row);empressChime(i);

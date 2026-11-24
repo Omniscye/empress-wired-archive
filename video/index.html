@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#020611">
+<meta name="author" content="Omniscye / Empress">
+<meta name="description" content="Navi // Empress video transmission">
+<title>Navi // Empress_Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+body{padding:20px;min-height:100dvh;display:grid;place-items:center}
+.scanlines,.vignette{z-index:2}
+#main-interface{max-width:1100px;width:100%;margin:0;padding:clamp(16px,4vw,36px)}
+header{margin-bottom:1.2rem}
+h1{overflow-wrap:anywhere}
+#boot-screen{top:clamp(18px,5vw,48px);left:clamp(18px,5vw,48px);font-size:clamp(13px,2.5vw,20px)}
+#skip{position:fixed;bottom:24px;right:24px;z-index:51}
+button,.media-link{font:inherit;color:var(--text-color);background:#071323;border:1px solid var(--dim-text);padding:10px 14px;cursor:pointer;display:inline-block}
+button:hover,.media-link:hover{background:var(--text-color);color:var(--bg-color)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--alert-color);outline-offset:4px}
+.frame{position:relative;background:#000;border:1px solid var(--dim-text);box-shadow:0 0 24px #91c5ff22;display:grid;place-items:center;min-height:180px}
+video{width:100%;max-height:72dvh;display:block;background:#000;object-fit:contain}
+video[hidden], [hidden]{display:none!important}
+#empty{padding:35px 20px;text-align:center;line-height:1.8}
+#empty p{color:var(--alert-color)}
+#empty label{display:inline-block;margin-top:18px}
+#local{max-width:100%;font:inherit;color:var(--text-color)}
+.statusbar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:12px 0;color:var(--alert-color);font-size:.85rem}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+footer{margin-top:1.6rem}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bg-image"></div><div class="scanlines"></div><div class="vignette"></div>
+<div id="boot-screen" aria-live="off"></div>
+<button id="skip" type="button">[ SKIP BOOT ]</button>
+<main id="main-interface">
+<header><div><h1>Navi // Empress_Media</h1><p>WIRED_ROUTE / VIDEO TRANSMISSION</p></div><div class="sys-info">NODE: MEDIA.WIRED.NET<br>USER: OMNISCYE<br>CHANNEL: 001</div></header>
+<div class="statusbar"><span id="state" role="status">[ AWAITING SIGNAL ]</span><span id="details">RESOLUTION: --</span></div>
+<div class="frame">
+<video id="media" controls playsinline preload="metadata" hidden aria-label="Empress video transmission"></video>
+<div id="empty"><p id="notice">[ NO VIDEO TRANSMISSION AVAILABLE ]</p><span>The source file has not been installed yet.</span><br><label for="local">Preview a local video (not uploaded):</label><br><input id="local" type="file" accept="video/*"></div>
+</div>
+<div class="actions"><button id="launch" type="button" hidden>[ PLAY TRANSMISSION ]</button><button id="full" type="button" hidden>[ FULLSCREEN ]</button><a id="download" class="media-link" hidden download="transmission.mp4">[ DOWNLOAD SOURCE ]</a><button id="reboot" type="button">[ REBOOT NAVI ]</button></div>
+<footer><a href="../">[ RETURN TO MOD ARCHIVE ]</a><span>PROTOCOL BLUE // WIRED</span></footer>
+</main>
+<noscript><p>JavaScript is required for the boot sequence and player.</p></noscript>
+<script>
+"use strict";
+const source = "./transmission.mp4";
+const $ = id => document.getElementById(id);
+const media = $("media"), empty = $("empty"), boot = $("boot-screen"), main = $("main-interface");
+let bootToken = 0, localURL = null, localSelected = false;
+const delay = ms => new Promise(resolve => setTimeout(resolve,ms));
+function reveal(){bootToken++;boot.style.display="none";$("skip").hidden=true;main.style.display="block";}
+async function startBoot(){
+ const token=++bootToken;
+ boot.textContent="";boot.style.display="block";main.style.display="none";$("skip").hidden=false;
+ const lines=["NAVI BIOS // EMPRESS_MEDIA","[ OK ] INITIALIZING WIRED ROUTE","[ OK ] MOUNTING MEDIA INTERFACE","[ OK ] REGISTERING VIDEO DECODER","[ OK ] USER SIGNATURE: OMNISCYE","[ >> ] OPENING TRANSMISSION CHANNEL..."];
+ if(matchMedia("(prefers-reduced-motion: reduce)").matches || new URLSearchParams(location.search).get("skipBoot")==="true"){reveal();return;}
+ for(const line of lines){const row=document.createElement("div");boot.append(row);for(const char of line){if(token!==bootToken)return;row.textContent+=char;await delay(15);}await delay(110);}
+ if(token===bootToken)reveal();
+}
+function showMedia(url,name){media.src=url;media.hidden=false;empty.hidden=true;$("launch").hidden=false;$("full").hidden=false;$("download").hidden=false;$("download").href=url;$("download").download=name;$("state").textContent="[ INITIALIZING VIDEO ]";media.load();}
+function missing(){media.hidden=true;empty.hidden=false;$("launch").hidden=true;$("full").hidden=true;$("download").hidden=true;$("state").textContent="[ SOURCE UNAVAILABLE ]";$("details").textContent="RESOLUTION: --";}
+media.addEventListener("loadedmetadata",()=>{$("details").textContent="RESOLUTION: "+media.videoWidth+" × "+media.videoHeight;$("state").textContent="[ SIGNAL ACQUIRED ]";});
+media.addEventListener("playing",()=>{$("state").textContent="[ TRANSMISSION ACTIVE ]";$("launch").textContent="[ PAUSE TRANSMISSION ]";});
+media.addEventListener("pause",()=>{$("state").textContent="[ SIGNAL PAUSED ]";$("launch").textContent="[ PLAY TRANSMISSION ]";});
+media.addEventListener("ended",()=>{$("state").textContent="[ TRANSMISSION COMPLETE ]";});
+media.addEventListener("waiting",()=>{$("state").textContent="[ BUFFERING SIGNAL ]";});
+media.addEventListener("error",()=>{missing();$("notice").textContent="[ VIDEO SOURCE MISSING OR UNSUPPORTED ]";});
+$("launch").addEventListener("click",async()=>{if(!media.paused){media.pause();return;}try{await media.play();}catch{$("state").textContent="[ USE PLAYER CONTROLS TO PLAY ]";}});
+$("full").addEventListener("click",async()=>{try{if(media.requestFullscreen)await media.requestFullscreen();else if(media.webkitEnterFullscreen)media.webkitEnterFullscreen();}catch{$("state").textContent="[ FULLSCREEN UNAVAILABLE ]";}});
+$("local").addEventListener("change",e=>{const file=e.target.files[0];if(!file)return;localSelected=true;if(localURL)URL.revokeObjectURL(localURL);localURL=URL.createObjectURL(file);showMedia(localURL,file.name);});
+$("skip").addEventListener("click",reveal);
+$("reboot").addEventListener("click",()=>{media.pause();startBoot();});
+startBoot();
+fetch(source,{method:"HEAD",cache:"no-cache"}).then(r=>{if(localSelected)return;if(r.ok&&!((r.headers.get("content-type")||"").includes("text/html")))showMedia(source,"transmission.mp4");else missing();}).catch(()=>{if(!localSelected)missing();});
+</script>
+</body>
+</html>

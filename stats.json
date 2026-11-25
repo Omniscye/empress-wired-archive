@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-24T22:15:24.099Z",
+  "generatedAt": "2026-11-25T08:05:23.930Z",
   "thunderstore": {
-    "totalDownloads": 33938,
+    "totalDownloads": 33943,
     "totalMods": 4,
     "teams": {
       "Omniscye": {
@@ -14,7 +14,7 @@
         "displayName": "Empress",
         "url": "https://thunderstore.io/c/repo/p/Empress_AI/",
         "mods": 4,
-        "downloads": 33938
+        "downloads": 33943
       }
     }
   },
@@ -35,7 +35,7 @@
       "displayTeam": "Empress",
       "name": "The_Elevator",
       "displayName": "The Elevator",
-      "downloads": 24796,
+      "downloads": 24801,
       "ratings": 4,
       "version": "2.2.1",
       "description": "A 100-floor elevator level for REPO where every stop opens into a random good or bad event, creepy challenges, solo errands, jackpots, and cabin disasters.",

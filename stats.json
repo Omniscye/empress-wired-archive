@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-26T07:55:37.813Z",
+  "generatedAt": "2026-11-26T21:19:01.678Z",
   "thunderstore": {
-    "totalDownloads": 33989,
+    "totalDownloads": 33997,
     "totalMods": 4,
     "teams": {
       "Omniscye": {
@@ -14,7 +14,7 @@
         "displayName": "Empress",
         "url": "https://thunderstore.io/c/repo/p/Empress_AI/",
         "mods": 4,
-        "downloads": 33989
+        "downloads": 33997
       }
     }
   },
@@ -35,7 +35,7 @@
       "displayTeam": "Empress",
       "name": "The_Elevator",
       "displayName": "The Elevator",
-      "downloads": 24831,
+      "downloads": 24838,
       "ratings": 4,
       "version": "2.2.1",
       "description": "A 100-floor elevator level for REPO where every stop opens into a random good or bad event, creepy challenges, solo errands, jackpots, and cabin disasters.",
@@ -76,7 +76,7 @@
       "displayTeam": "Empress",
       "name": "You_Vs_AI",
       "displayName": "You Vs AI",
-      "downloads": 1234,
+      "downloads": 1235,
       "ratings": 1,
       "version": "1.0.1",
       "description": "Empress A.I. has escaped Omniscye's sandbox - She now watches how you play, builds frustration, and uses the level against you so you can try to survive her little god complex.",

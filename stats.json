@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-26T21:19:01.678Z",
+  "generatedAt": "2026-11-27T07:56:44.710Z",
   "thunderstore": {
-    "totalDownloads": 33997,
+    "totalDownloads": 34009,
     "totalMods": 4,
     "teams": {
       "Omniscye": {
@@ -14,7 +14,7 @@
         "displayName": "Empress",
         "url": "https://thunderstore.io/c/repo/p/Empress_AI/",
         "mods": 4,
-        "downloads": 33997
+        "downloads": 34009
       }
     }
   },
@@ -35,7 +35,7 @@
       "displayTeam": "Empress",
       "name": "The_Elevator",
       "displayName": "The Elevator",
-      "downloads": 24838,
+      "downloads": 24848,
       "ratings": 4,
       "version": "2.2.1",
       "description": "A 100-floor elevator level for REPO where every stop opens into a random good or bad event, creepy challenges, solo errands, jackpots, and cabin disasters.",
@@ -94,7 +94,7 @@
       "displayTeam": "Empress",
       "name": "Lovebound_AI",
       "displayName": "Lovebound AI",
-      "downloads": 1205,
+      "downloads": 1207,
       "ratings": 1,
       "version": "1.0.0",
       "description": "Build an Empress/Your A.I. companion in singleplayer REPO, earn love, get blessings, and at 60% affection watch it manifest as a pink ghost helper that may save your run or judge every mistake personally.",
